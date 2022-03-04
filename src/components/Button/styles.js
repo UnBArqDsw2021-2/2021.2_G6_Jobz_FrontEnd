@@ -1,23 +1,32 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-.button{
+  .button {
     background-color: white;
-    width: 300px;
-    height:40px;
-    border-radius: 10px;
-    border-color: #AE163A;
-    
+    width: 18.75rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    border-color: #ae163a;
+
     align-items: center;
     cursor: pointer;
 
-    &:not(:disabled):hover{
-        filter: brightness(0.9);
+    &:not(:disabled):hover {
+      filter: brightness(0.9);
     }
 
-    span{
-        color: #AE163A;
-        font-size: 20px;
-        }
-}
+    span {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* or 125% */
+
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #ae163a;
+    }
+  }
 `
