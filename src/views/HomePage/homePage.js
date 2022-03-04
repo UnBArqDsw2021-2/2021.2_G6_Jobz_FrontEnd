@@ -9,6 +9,10 @@ function HomePage() {
         navigate("/userRegistrationPage");
     }
 
+    function navigateToServiceCreate() {
+        navigate("/serviceCreatePage");
+    }
+
 
     return (
         <main>
@@ -26,7 +30,7 @@ function HomePage() {
             </links>
             <h2>
                 <br></br>Botão para a página de cadastro<button onClick={navigateToUserRegistration}> Click aqui</button>
-                <br></br>Botão para entrar na página tal: <button> Click aqui</button>
+                <br></br>Botão para a página de cadastro do serviço: <button onClick={navigateToServiceCreate}> Click aqui</button>
             </h2>
 
         </main>
