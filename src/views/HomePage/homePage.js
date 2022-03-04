@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function HomePage() {
+    let navigate = useNavigate();
+
+    function navigateToUserRegistration() {
+        navigate("/userRegistrationPage");
+    }
+
 
     return (
         <main>
@@ -16,7 +23,7 @@ function HomePage() {
                 <a href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_BackEnd"> Página do BackEnd</a>
             </links>
             <h2>
-                <br></br>Botão para entrar na página tal: <button> Click aqui</button>
+                <br></br>Botão para a página de cadastro<button onClick={navigateToUserRegistration}> Click aqui</button>
                 <br></br>Botão para entrar na página tal: <button> Click aqui</button>
             </h2>
 
