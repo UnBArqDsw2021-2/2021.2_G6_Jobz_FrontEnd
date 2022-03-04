@@ -2,25 +2,32 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100% + 9px;
-  height: 100px;
-  border: 1px solid red;
+  height: 80px;
   margin: -10px;
+  padding-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
 `;
 
 export const LogoContainer = styled.div`
-  border: 1px solid blue;
+  display: flex;
+  margin-left: 5%;
 `;
 
 export const ButtonsContainer = styled.div`
-  border: 1px solid blue;
-
+  margin-right: 50px;
   a {
     color: rgb(98, 144, 142);
     text-decoration: none;
     margin-right: 20px;
     font-weight: bold;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
