@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../../components/Navbar/navbar';
 
 function HomePage() {
-
     return (
         <main>
+            <Navbar/>
             <h1>
                 Pagina inicial da aplicação
             </h1 >
@@ -20,8 +21,7 @@ function HomePage() {
                 <br></br>Botão para entrar na página tal: <button> Click aqui</button>
             </h2>
 
-        </main >
-
+        </main>
     );
 }
 
