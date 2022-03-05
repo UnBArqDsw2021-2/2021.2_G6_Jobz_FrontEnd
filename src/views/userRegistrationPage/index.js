@@ -8,10 +8,11 @@ const UserRegistrationPage = () => (
   <S.Container>
     <header>
       <img src={logo} alt="logo" />
+      <input>type="text" placeholder="Search"</input>
     </header>
 
     <form>
-      <Input placeholder="NOME" type="text" required />
+      <Input type="text" placeholder="NOME" />
       <Input placeholder="EMAIL" type="text" required />
       <Input placeholder="CPF" type="text" required />
       <Input placeholder="TELEFONE" type="text" required />

@@ -26,10 +26,6 @@ export const Container = styled.div`
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
 
-    button {
-      widht: 100px;
-    }
-
     input {
       width: 18.253rem;
       height: 2.128rem;

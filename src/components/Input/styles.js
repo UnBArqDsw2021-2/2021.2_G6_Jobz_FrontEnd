@@ -1,17 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
-
-input {
+  input {
     background-color: white;
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;
-    border-color: #AE163A;
-    font-size: 20px;
-
-}
-    
-
+    width: 18.75rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    border-color: #ae163a;
+    font-size: 1.25rem;
+    background-image: url();
+    background-repeat: no-repeat;
+  }
 `
