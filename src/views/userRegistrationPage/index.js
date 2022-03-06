@@ -8,7 +8,6 @@ const UserRegistrationPage = () => (
   <S.Container>
     <header>
       <img src={logo} alt="logo" />
-      <input>type="text" placeholder="Search"</input>
     </header>
 
     <form>
@@ -24,4 +23,4 @@ const UserRegistrationPage = () => (
   </S.Container>
 )
 
-export default UserRegistrationPage
+export default UserRegistrationPage;
