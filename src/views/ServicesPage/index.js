@@ -28,8 +28,8 @@ const ServicesPage = () => (
           </a>
         </li>
         <li>
-          <a class="title" href="#login">
-            login
+          <a class="title" href="/login">
+            entrar
           </a>
         </li>
       </nav>
