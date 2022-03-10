@@ -1,27 +1,34 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100% + 9px;
-  height: 80px;
-  margin: -10px;
-  padding-top: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 91px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
 
-  border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
-`;
+  //border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
+`
 
 export const LogoContainer = styled.div`
   display: flex;
   margin-left: 5%;
-`;
+`
 
 export const ButtonsContainer = styled.div`
   margin-right: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
   a {
-    color: rgb(98, 144, 142);
+    color: #fff;
     text-decoration: none;
+    letter-spacing: 0.2px;
     margin-right: 20px;
     font-weight: bold;
     font-family: Montserrat;
@@ -30,4 +37,31 @@ export const ButtonsContainer = styled.div`
     font-size: 16px;
     line-height: 20px;
   }
-`;
+`
+export const BuscaHeader = styled.div`
+  margin-left: 2.56rem;
+  background-color: #f5f5f5;
+  height: 50px;
+  border: 1px solid #dadada;
+  border-radius: 74px;
+  width: 317px;
+
+  #btnBusca {
+    margin-left: 16px;
+    padding-top: 1.0625rem;
+  }
+
+  #txtBusca {
+    position: relative;
+    border-radius: 74px;
+    float: right;
+    background-color: transparent;
+    padding-left: 5px;
+    font-family: Montserrat;
+    font-size: 14px;
+    border: none;
+    height: 100%;
+    width: 256px;
+    text-indent: 24px;
+  }
+`

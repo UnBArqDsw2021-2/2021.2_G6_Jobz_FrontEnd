@@ -1,23 +1,32 @@
-import React from 'react';
-import * as S from './styles';
-import { FaBell } from 'react-icons/fa';
-import LogoBlack from '../../assets/logo-black.png';
+import React from 'react'
+import * as S from './styles'
+import { FaBell } from 'react-icons/fa'
+import LogoWhite from '../../assets/LogoWhite.svg'
+import procura from '../../assets/procura.svg'
 
-const isLogged = false;
+const isLogged = false
 
 function Navbar(props) {
-    return (
-        <S.Container>
-            <S.LogoContainer>
-                <img src={LogoBlack} alt="logo-black" />
-            </S.LogoContainer>
-            <S.ButtonsContainer>
-                <a href="/">Home</a>
-                <a href="/">Torne-se um prestador de serviços</a>
-                <a href="/">{ isLogged ? <FaBell /> : 'Login'}</a>
-            </S.ButtonsContainer>
-        </S.Container>
-    )
+  return (
+    <S.Container>
+      <S.LogoContainer>
+        <img src={LogoWhite} alt="logo-white" />
+      </S.LogoContainer>
+      <S.BuscaHeader>
+        <img src={procura} id="btnBusca" alt="procura" />
+        <input type="text" id="txtBusca" placeholder="Search" />
+      </S.BuscaHeader>
+      <S.ButtonsContainer>
+        <a href="/">Explore</a>
+        <a href="/">
+          Torne-se um prestador
+          <br /> de serviços
+        </a>
+        <a href="/">{isLogged ? <FaBell /> : 'Login'}</a>
+        <a href="/">Cadastre-se</a>
+      </S.ButtonsContainer>
+    </S.Container>
+  )
 }
 
-export default Navbar;
+export default Navbar
