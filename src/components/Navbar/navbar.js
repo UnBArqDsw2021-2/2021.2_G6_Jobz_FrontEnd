@@ -23,7 +23,7 @@ function Navbar(props) {
           <br /> de serviços
         </a>
         <a href="/">{isLogged ? <FaBell /> : 'Login'}</a>
-        <a href="/">Cadastre-se</a>
+        <a href="/userRegistrationPage">Cadastre-se</a>
       </S.ButtonsContainer>
     </S.Container>
   )

@@ -8,8 +8,8 @@ function ServiceCreatePage() {
   const [form, setForm] = useState({
     categroy: null,
     name: null,
-    description: null,
-  });
+    description: null
+  })
 
   return (
     <S.Container>
@@ -18,7 +18,7 @@ function ServiceCreatePage() {
       </header>
 
       <input></input>
-  
+
       <form>
         <Input placeholder="CATEGORIA" type="text" required />
         <Input placeholder="TÍTULO" type="text" required />
@@ -30,4 +30,4 @@ function ServiceCreatePage() {
   )
 }
 
-export default ServiceCreatePage;
+export default ServiceCreatePage

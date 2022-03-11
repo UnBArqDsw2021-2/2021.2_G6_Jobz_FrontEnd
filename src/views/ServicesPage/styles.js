@@ -19,6 +19,8 @@ export const Container = styled.div`
   }
 
   #txtBuscaSearch {
+    box-shadow: 0 0 0 0;
+    outline: 0;
     border-radius: 1.625rem;
     float: right;
     background-color: transparent;
@@ -107,7 +109,4 @@ export const Container = styled.div`
     font-size: 1.125rem;
     color: #000000;
   }
-  position: absolute;
-  left: 0rem;
-  right: 0rem;
 `

@@ -52,6 +52,8 @@ export const BuscaHeader = styled.div`
   }
 
   #txtBusca {
+    box-shadow: 0 0 0 0;
+    outline: 0;
     position: relative;
     border-radius: 74px;
     float: right;

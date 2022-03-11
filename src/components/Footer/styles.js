@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  width: 100%;
+  position: absolute;
+  left: 0rem;
+  right: 0rem;
   height: 230px;
   display: flex;
   background: linear-gradient(90deg, #05323a 8.37%, #1e696c 85.15%);
