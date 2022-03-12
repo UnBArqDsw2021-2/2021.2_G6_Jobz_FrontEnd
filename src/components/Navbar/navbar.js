@@ -18,7 +18,7 @@ function Navbar(props) {
       </S.BuscaHeader>
       <S.ButtonsContainer>
         <a href="/">Explore</a>
-        <a href="/">
+        <a href="/collaboratorRegistrationPage">
           Torne-se um prestador
           <br /> de serviços
         </a>

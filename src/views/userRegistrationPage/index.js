@@ -41,57 +41,25 @@ function UserRegistrationPage() {
     <S.Container>
       <Navbar />
       <S.Body>
+
         <div id="GroupForm">
           <header>
             <img src={logo} alt="logo" />
           </header>
+          CADASTRO DE CLIENTE
 
           <form onSubmit={e => submit(e)}>
-            <Input
-              onChange={e => handle(e)}
-              id="name"
-              value={data.name}
-              placeholder="NOME"
-              type="text"
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="email"
-              value={data.email}
-              placeholder="EMAIL"
-              type="email"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="cpf"
-              value={data.cpf}
-              placeholder="CPF"
-              type="number"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="phoneNumber"
-              value={data.phoneNumber}
-              placeholder="TELEFONE"
-              type="number"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="password"
-              value={data.password}
-              placeholder="SENHA"
-              type="password"
-              required
-            />
+            <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" />
+            <Input onChange={e => handle(e)} id="email" value={data.email} placeholder="EMAIL" type="email" required />
+            <Input onChange={e => handle(e)} id="cpf" value={data.cpf} placeholder="CPF" type="number" required />
+            <Input onChange={e => handle(e)} id="phoneNumber" value={data.phoneNumber} placeholder="TELEFONE" type="number" required />
+            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required />
             <Input placeholder="CONFIRMAR SENHA" type="password" required />
             <br></br>
             <Button type="submit" title={'CRIAR CONTA'} />
           </form>
           <div id="Linkation">
-            <a href="/">
+            <a href="/collaboratorRegistrationPage">
               É um prestador<br></br>de serviço?
             </a>
             <br></br>

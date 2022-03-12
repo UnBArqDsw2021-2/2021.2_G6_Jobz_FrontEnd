@@ -1,4 +1,5 @@
-import RegistrationPage from '../views/userRegistrationPage/index';
+import UserRegistrationPage from '../views/userRegistrationPage/index';
+import CollaboratorRegistrationPage from '../views/collaboratorRegistrationPage/index'
 import ServiceCreatePage from '../views/serviceCreatePage/index';
 import ServicePage from '../views/ServicesPage/index'
 import HomePage from '../views/HomePage/homePage';
@@ -9,7 +10,8 @@ function directions() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/userRegistrationPage' element={<RegistrationPage />} />
+        <Route path='/userRegistrationPage' element={<UserRegistrationPage />} />
+        <Route path='/collaboratorRegistrationPage' element={<CollaboratorRegistrationPage />} />
         <Route path='/serviceCreatePage' element={<ServiceCreatePage />} />
         <Route path='/servicePage' element={<ServicePage />} />
       </Routes>

@@ -41,7 +41,10 @@ function Footer(props) {
           <p class="pProduct">A product of </p>
           <img src={LogoWhite} id="logosmall" alt="logo branca" />
           <p class="pRserved">© 2022 Jobz. All rights reserved</p>
+
         </div>
+
+
       </S.Social>
     </S.Container>
   )
