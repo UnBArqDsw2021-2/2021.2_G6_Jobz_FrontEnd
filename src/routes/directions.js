@@ -10,11 +10,11 @@ function directions() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/HomePage' element={<HomePage />} />
         <Route path='/userRegistrationPage' element={<UserRegistrationPage />} />
         <Route path='/collaboratorRegistrationPage' element={<CollaboratorRegistrationPage />} />
         <Route path='/serviceCreatePage' element={<ServiceCreatePage />} />
-        <Route path='/servicePage' element={<ServicePage />} />
+        <Route path='/' element={<ServicePage />} />
         <Route path='/login' element={<LoginPage />} />
       </Routes>
     </BrowserRouter>

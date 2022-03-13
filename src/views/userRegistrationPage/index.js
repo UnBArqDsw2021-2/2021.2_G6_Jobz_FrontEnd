@@ -45,11 +45,14 @@ function UserRegistrationPage() {
         <div id="GroupForm">
           <header>
             <img src={logo} alt="logo" />
+            <br></br>
+            CADASTRO DE CLIENTE
+
           </header>
-          CADASTRO DE CLIENTE
 
           <form onSubmit={e => submit(e)}>
-            <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" />
+
+            <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" required />
             <Input onChange={e => handle(e)} id="email" value={data.email} placeholder="EMAIL" type="email" required />
             <Input onChange={e => handle(e)} id="cpf" value={data.cpf} placeholder="CPF" type="number" required />
             <Input onChange={e => handle(e)} id="phoneNumber" value={data.phoneNumber} placeholder="TELEFONE" type="number" required />
@@ -58,15 +61,18 @@ function UserRegistrationPage() {
             <br></br>
             <Button type="submit" title={'CRIAR CONTA'} />
           </form>
+
           <div id="Linkation">
             <a href="/collaboratorRegistrationPage">
               É um prestador<br></br>de serviço?
             </a>
+
             <br></br>
             <a class="a1" href="/">
               Esqueceu a<br></br>senha?
             </a>
           </div>
+
         </div>
       </S.Body>
       <Footer />

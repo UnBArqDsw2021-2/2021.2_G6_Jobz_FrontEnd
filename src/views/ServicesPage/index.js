@@ -13,52 +13,21 @@ const ServicesPage = () => (
   <S.Container>
     <Navbar />
 
-    <header id="header">
-      <nav class="container">
-        <img src={logo} id="logo" alt="logo" />
-        <div id="divBusca">
-          <img src={procura} id="btnBusca" alt="procura" />
-          <input type="text" id="txtBusca" placeholder="Search" />
-        </div>
-        <li>
-          <a class="title" href="#explore">
-            Explore
-          </a>
-        </li>
-        <li>
-          <a class="title" href="#prestador">
-            Torne-se um<br></br>prestador de
-          </a>
-        </li>
-        <li>
-          <a class="title" href="/login">
-            entrar
-          </a>
-        </li>
-      </nav>
-    </header>
-
-    <section
-      class="section"
-      id="search"
-      style={{ backgroundImage: `url(${background})` }}
-    >
+    <section class="section" id="search" style={{ backgroundImage: `url(${background})` }}>
       <div class="container grid">
         <div class="searchBar">
-          <p class="encontre">
-            Encontre o serviço<br></br>certo para você
-          </p>
+
+          <p class="encontre"> Encontre o serviço<br></br>certo para você  </p>
+
           <div id="divBuscaSearch">
             <img src={procura} id="btnBuscaSearch" alt="procura" />
-            <input
-              type="text"
-              id="txtBuscaSearch"
-              placeholder="Busque o que precisar"
-            />
+            <input type="text" id="txtBuscaSearch" placeholder="Busque o que precisar" />
           </div>
+
         </div>
       </div>
     </section>
+
     <section class="section" id="services">
       <div class="container grid">
         <div class="text">

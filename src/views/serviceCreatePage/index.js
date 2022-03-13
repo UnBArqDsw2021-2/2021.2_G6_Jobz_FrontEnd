@@ -17,8 +17,6 @@ function ServiceCreatePage() {
         <img src={logo} alt="logo" />
       </header>
 
-      <input></input>
-
       <form>
         <Input placeholder="CATEGORIA" type="text" required />
         <Input placeholder="TÍTULO" type="text" required />

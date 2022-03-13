@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+export const Container = styled.div`
+
+`
 
 export const Body = styled.div`
   height: 990px;
@@ -9,6 +11,7 @@ export const Body = styled.div`
   background-color: #fff;
   align-items: center;
   margin-top: 178px;
+
   #GroupForm {
     height: 990px;
     flex-direction: column;
@@ -20,12 +23,17 @@ export const Body = styled.div`
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
   }
+
   header {
     margin-top: 12px;
+    caret-color: transparent;
+
     img {
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
+      justify-content: center;
+      margin-left : 2.20rem;
     }
   }
 
@@ -34,22 +42,10 @@ export const Body = styled.div`
     background-color: #f9f9f9;
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
+    
 
-    input {
-      width: 235.77px;
-      height: 34.77px;
-      margin-bottom: 1.31rem;
-      text-indent: 2.625rem;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      color: #ae163a;
-      box-shadow: 0 0 0 0;
-      outline: 0;
-    }
   }
+
   #Linkation {
     margin-left: -30px;
     margin-top: 12px;
@@ -59,6 +55,7 @@ export const Body = styled.div`
     font-weight: 500;
     font-size: 12px;
     text-align: center;
+
     a {
       padding-left: 34px;
       color: #e38233;
