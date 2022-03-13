@@ -5,12 +5,39 @@ import background from '../../assets/service.png'
 import ti from '../../assets/TI.png'
 import jardinagem from '../../assets/Jardinagem.png'
 import encanador from '../../assets/Encanador.png'
+import logo from '../../assets/logo.svg'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 
 const ServicesPage = () => (
   <S.Container>
     <Navbar />
+
+    <header id="header">
+      <nav class="container">
+        <img src={logo} id="logo" alt="logo" />
+        <div id="divBusca">
+          <img src={procura} id="btnBusca" alt="procura" />
+          <input type="text" id="txtBusca" placeholder="Search" />
+        </div>
+        <li>
+          <a class="title" href="#explore">
+            Explore
+          </a>
+        </li>
+        <li>
+          <a class="title" href="#prestador">
+            Torne-se um<br></br>prestador de
+          </a>
+        </li>
+        <li>
+          <a class="title" href="/login">
+            entrar
+          </a>
+        </li>
+      </nav>
+    </header>
+
     <section
       class="section"
       id="search"
