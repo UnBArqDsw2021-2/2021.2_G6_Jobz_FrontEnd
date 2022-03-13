@@ -5,7 +5,7 @@ export const Container = styled.div`
 `
 
 export const Body = styled.div`
-  height: 990px;
+  height: 600px;
   flex-direction: column;
   display: flex;
   background-color: #fff;

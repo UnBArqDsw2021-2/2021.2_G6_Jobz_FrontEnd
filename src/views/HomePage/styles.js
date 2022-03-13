@@ -67,6 +67,7 @@ export const Container = styled.div`
 
   #services {
     display: flex;
+    justify-content: center;
     background-color: #fff;
     margin-top: 33.2rem;
     height: 33rem;
@@ -75,8 +76,10 @@ export const Container = styled.div`
     margin-top: 2.25rem;
   }
   #services .text p {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    width: 18.25rem;
+    width: 50rem;
     height: 2rem;
 
     font-family: Montserrat;
@@ -84,8 +87,6 @@ export const Container = styled.div`
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.8rem;
-    text-align: center;
-
     color: #2f7b77;
   }
 
@@ -109,4 +110,53 @@ export const Container = styled.div`
     font-size: 1.125rem;
     color: #000000;
   }
+
+  #jobzInfo {
+    background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: white;
+  }
+
+#titleCategories{
+  margin-bottom: 1rem;   
+  justify-content: center;
+  margin-top: 5rem;
+  display: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #2f7b77;;
+}
+
+  #popularCategories{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    p{
+      text-align: center;
+      line-height: 60px;
+      height: 60px;
+      background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
+      width: 25rem;
+      margin-left: 1rem;
+    }
+  }
+
+
 `

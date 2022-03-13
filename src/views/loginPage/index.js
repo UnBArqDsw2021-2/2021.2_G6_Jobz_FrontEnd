@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '../../components/Button'
 import logo from '../../assets/logo.svg'
 import Input from '../../components/Input'
+import fundoVerde from '../../assets/fundoVerde.png'
 import * as S from './styles'
 import { Axios } from 'axios'
 
@@ -19,8 +20,8 @@ function LoginPage() {
       email: data.email,
       password: data.password,
     }).then(res => {
-        console.log(res.data);
-      })
+      console.log(res.data);
+    })
   }
 
   function handle(e) {
@@ -32,7 +33,9 @@ function LoginPage() {
 
   return (
     <div>
+
       <S.Container>
+
         <header>
           <img src={logo} alt="logo" />
         </header>
