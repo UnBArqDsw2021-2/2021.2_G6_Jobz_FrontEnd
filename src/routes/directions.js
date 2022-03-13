@@ -4,6 +4,8 @@ import ServiceCreatePage from '../views/serviceCreatePage/index';
 import ServicePage from '../views/ServicesPage/index'
 import LoginPage from '../views/loginPage/index'
 import HomePage from '../views/HomePage/homePage';
+import ProfilePage from '../views/ProfilePage/profile'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function directions() {
@@ -16,6 +18,7 @@ function directions() {
         <Route path='/serviceCreatePage' element={<ServiceCreatePage />} />
         <Route path='/' element={<ServicePage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/ProfilePage' element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   )
