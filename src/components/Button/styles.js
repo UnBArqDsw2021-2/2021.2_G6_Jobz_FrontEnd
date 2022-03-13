@@ -11,6 +11,7 @@ export const Container = styled.div`
     border-radius: 4px;
     align-items: center;
     cursor: pointer;
+    caret-color: transparent;
 
     &:not(:disabled):hover {
       filter: brightness(0.9);

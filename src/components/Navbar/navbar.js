@@ -9,20 +9,32 @@ const isLogged = false
 function Navbar(props) {
   return (
     <S.Container>
+
       <S.LogoContainer>
-        <img src={LogoWhite} alt="logo-white" />
+        <a href="/" class="Homepage">
+          <button type="button">
+            {' '}
+            <img src={LogoWhite} alt="logo-white" />
+          </button>
+        </a>
       </S.LogoContainer>
+
+
       <S.BuscaHeader>
         <img src={procura} id="btnBusca" alt="procura" />
         <input type="text" id="txtBusca" placeholder="Search" />
       </S.BuscaHeader>
+
       <S.ButtonsContainer>
         <a href="/">Explore</a>
+
         <a href="/collaboratorRegistrationPage">
           Torne-se um prestador
           <br /> de serviços
         </a>
-        <a href="/">{isLogged ? <FaBell /> : 'Login'}</a>
+
+        <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
+
         <a href="/userRegistrationPage">Cadastre-se</a>
       </S.ButtonsContainer>
     </S.Container>

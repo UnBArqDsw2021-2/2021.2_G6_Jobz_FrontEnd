@@ -18,6 +18,17 @@ export const Container = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   margin-left: 5%;
+
+  button {
+    border-radius: 50%;
+    background-color: transparent;
+    border-color: transparent;
+    height: 37px;
+    width: 50px;
+    cursor: pointer;
+    justify-content: center;
+    
+  }
 `
 
 export const ButtonsContainer = styled.div`
@@ -25,6 +36,7 @@ export const ButtonsContainer = styled.div`
   text-align: center;
   display: flex;
   align-items: center;
+  
   a {
     color: #fff;
     text-decoration: none;

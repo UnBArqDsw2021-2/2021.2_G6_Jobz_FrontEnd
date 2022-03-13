@@ -15,10 +15,21 @@ function Footer(props) {
         <p class="pPhone">55 61 992331722</p>
         <p class="pEmail">support@Jobz.agency</p>
       </S.Contact>
+
+      <S.Repositories>
+        <a id="documentacao" href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_docs"> {' '}Documentação do Jobz</a>
+        <br></br> <br></br>
+        <a href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_FrontEnd"> {' '} Repositório do FrontEnd</a>
+        <br></br> <br></br>
+        <a href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_BackEnd"> {' '} Repositório do BackEnd</a>
+      </S.Repositories>
+
       <S.Divider />
+
       <S.Social>
         <div id="social">
-          <a href="https://www.linkedin.com/" class="linkedin">
+
+          <a href="https://www.linkedin.com/" class="linkedin" >
             <button type="button">
               {' '}
               <img src={Linkedin} id="linkedin" alt="logo linkedin" />
@@ -27,15 +38,17 @@ function Footer(props) {
           <a href="https://twitter.com/" class="twitter">
             <button type="button">
               {' '}
-              <img src={Twitter} id="Twitter" alt="logo Twitter" />
+              <img src={Twitter} id="twitter" alt="logo Twitter" />
             </button>
           </a>
+
           <a href="https://www.facebook.com/" class="facebook">
             <button type="button">
               {' '}
-              <img src={Facebook} id="Facebook" alt="logo Facebook" />
+              <img src={Facebook} id="facebook" alt="logo Facebook" />
             </button>
           </a>
+
         </div>
         <div id="product">
           <p class="pProduct">A product of </p>
@@ -43,7 +56,6 @@ function Footer(props) {
           <p class="pRserved">© 2022 Jobz. All rights reserved</p>
 
         </div>
-
 
       </S.Social>
     </S.Container>

@@ -39,12 +39,24 @@ export const Contact = styled.div`
   }
 `
 
+export const Repositories = styled.div`
+display: column;
+position: absolute;
+left: 40%;
+width: 200px;
+margin-top: 35px;
+opacity: 0.9;
+
+a{
+    color:white;
+}
+`
+
 export const Divider = styled.div`
   position: absolute;
   left: 10.81%;
   right: 4.6%;
   margin-top: 150px;
-
   background: #ffffff;
   opacity: 0.2;
 
@@ -56,26 +68,34 @@ export const Social = styled.div`
   margin-top: 170px;
   widht: 100%;
   height: 37.69px;
+
   a {
-    padding-left: 25px;
+    padding-left: 1px;
   }
+
   color: transparent;
+
   button {
     border-radius: 50%;
     background-color: transparent;
     border-color: transparent;
     height: 37px;
-    width: 37px;
+    width: 50px;
+    cursor: pointer;
+    justify-content: center;
+    
+
   }
   #product {
     align-items: center;
     #logosmall {
       position: absolute;
-      margin-top: -35px;
+      margin-top: -2.4rem;
       align-items: center;
-      margin-left: 415px;
-      widht: 43px;
-      height: 19px;
+      margin-left: 26.5rem;
+      widht: 3.1rem;
+      height: 1.4rem;
+
     }
   }
   p.pProduct {
@@ -86,6 +106,7 @@ export const Social = styled.div`
     font-style: normal;
     font-size: 16px;
     color: #fff;
+
   }
   p.pRserved {
     margin-top: -35px;
@@ -95,7 +116,6 @@ export const Social = styled.div`
     font-family: 'Montserrat';
     font-style: normal;
     font-size: 16px;
-
     color: #fff;
   }
 `
