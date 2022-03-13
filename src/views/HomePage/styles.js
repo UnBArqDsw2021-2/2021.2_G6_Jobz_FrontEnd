@@ -112,17 +112,22 @@ export const Container = styled.div`
   }
 
   #jobzInfo {
-    background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
-    height: 20rem;
+    line-height: 7rem;
+    height: 17rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: column;
+    text-align: center;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     font-size: 1.125rem;
     color: white;
+    caret-color: transparent;
+    background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
+
+    .button{
+
+    }
   }
 
 #titleCategories{
@@ -141,6 +146,7 @@ export const Container = styled.div`
 }
 
   #popularCategories{
+    caret-color: transparent;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;

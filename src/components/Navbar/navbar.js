@@ -3,10 +3,12 @@ import * as S from './styles'
 import { FaBell } from 'react-icons/fa'
 import LogoWhite from '../../assets/LogoWhite.svg'
 import procura from '../../assets/procura.svg'
-
-const isLogged = false
+import Button from '../../components/ButtonForRegistration/index'
 
 function Navbar(props) {
+
+  const isLogged = false
+
   return (
     <S.Container>
 
@@ -35,7 +37,7 @@ function Navbar(props) {
 
         <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
 
-        <a href="/userRegistrationPage">Cadastre-se</a>
+        <Button onClick='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" fontColor='White' borderRadius="76px" />
       </S.ButtonsContainer>
     </S.Container>
   )
