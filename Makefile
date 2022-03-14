@@ -1,6 +1,7 @@
-run:
+build:
 	docker build -t jobzfront .
-	docker run -it -v ${PWD}:/app -v /app/node_modules -p 3000:3000 --rm 20212_g6_jobz_frontend_front
+run:
+	docker run -it -v ${PWD}:/app -v /app/node_modules -p 3000:3000 jobzfront
 
 stop:
 	docker-compose down
