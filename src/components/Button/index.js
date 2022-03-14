@@ -10,7 +10,7 @@ function Button(props) {
     }
 
     return (
-        <S.Container ButtonColor={props.ButtonColor} textColor={props.textColor} borderColor={props.borderColor} borderRadius={props.borderRadius}>
+        <S.Container ButtonColor={props.ButtonColor} buttonWidth={props.buttonWidth} textColor={props.textColor} borderColor={props.borderColor} borderRadius={props.borderRadius}>
             {props => props.path ? props.path : 'userRegistrationPage'}
             <button onClick={navigateToPage} className="button"   >
                 <span> {props.title}</span>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   .button {
     background-color: ${props => props.ButtonColor ? props.ButtonColor : 'white'};
-    width: 235.77px;
+    width: ${props => props.buttonWidth ? props.buttonWidth : '235.77px'};
     height: 34.77px;
     border: ${props => props.borderColor ? props.borderColor : '1px solid #c7b4b9'};
     box-sizing: border-box;

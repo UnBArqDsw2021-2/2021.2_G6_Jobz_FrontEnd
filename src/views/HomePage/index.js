@@ -62,7 +62,7 @@ function ServicesPage() {
         <p id="text">
           O Jobz é uma plataforma que tem como objetivo facilitar o encontro e interação de prestadores de seriços com seus respectivos clientes.
         </p>
-        <Button path='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor='White' borderRadius='76px' />
+        <Button buttonWidth='180px' path='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor='White' borderRadius='76px' />
       </section>
 
       <section id="titleCategories">
