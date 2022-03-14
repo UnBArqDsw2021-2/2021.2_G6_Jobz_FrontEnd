@@ -21,5 +21,28 @@
 
 ## Requisitos
 
-''' Docker => 
-''' docker compose 
+Docker => 20.10.12
+
+docker compose => 1.29.2
+
+## Como rodar
+### Primeira execução:
+
+    make build
+
+### Subir o ambiente:
+    make run
+
+### Parar o ambiente:
+    make stop
+
+### Comandos extras:
+Remover o container de frontend
+
+    make remove
+
+Entrar no container do frontend
+
+    make front
+
+
