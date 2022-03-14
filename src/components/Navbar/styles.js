@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ export const Container = styled.div`
   background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
 
   //border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
-`;
+`
 
 export const LogoContainer = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ export const LogoContainer = styled.div`
     cursor: pointer;
     justify-content: center;
   }
-`;
+`
 
 export const ButtonsContainer = styled.div`
   margin-right: 50px;
@@ -54,7 +54,7 @@ export const ButtonsContainer = styled.div`
     border-color: transparent;
     background-color: transparent;
   }
-`;
+`
 export const BuscaHeader = styled.div`
   margin-left: 2.56rem;
   background-color: #f5f5f5;
@@ -83,4 +83,4 @@ export const BuscaHeader = styled.div`
     width: 256px;
     text-indent: 24px;
   }
-`;
+`

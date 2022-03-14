@@ -1,11 +1,11 @@
-import React from "react";
-import * as S from "./styles";
-import { FaBell } from "react-icons/fa";
-import LogoWhite from "../../assets/LogoWhite.svg";
-import procura from "../../assets/procura.svg";
-import Notification from "../../assets/Notification.svg";
+import React from 'react'
+import * as S from './styles'
+import { FaBell } from 'react-icons/fa'
+import LogoWhite from '../../assets/LogoWhite.svg'
+import procura from '../../assets/procura.svg'
+import Notification from '../../assets/Notification.svg'
 
-const isLogged = false;
+const isLogged = false
 
 function Navbar(props) {
   return (
@@ -13,7 +13,7 @@ function Navbar(props) {
       <S.LogoContainer>
         <a href="/" class="Homepage">
           <button type="button">
-            {" "}
+            {' '}
             <img src={LogoWhite} alt="logo-white" />
           </button>
         </a>
@@ -32,7 +32,7 @@ function Navbar(props) {
         ) : null}
 
         {props.login ? (
-          <a href="/login">{isLogged ? <FaBell /> : "Login"}</a>
+          <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
         ) : null}
 
         {props.cadastre ? (
@@ -48,7 +48,7 @@ function Navbar(props) {
         ) : null}
       </S.ButtonsContainer>
     </S.Container>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

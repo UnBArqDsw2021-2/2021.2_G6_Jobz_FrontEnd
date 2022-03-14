@@ -40,16 +40,16 @@ export const Contact = styled.div`
 `
 
 export const Repositories = styled.div`
-display: column;
-position: absolute;
-left: 40%;
-width: 200px;
-margin-top: 35px;
-opacity: 0.9;
+  display: column;
+  position: absolute;
+  left: 40%;
+  width: 200px;
+  margin-top: 35px;
+  opacity: 0.9;
 
-a{
-    color:white;
-}
+  a {
+    color: white;
+  }
 `
 
 export const Divider = styled.div`
@@ -83,8 +83,6 @@ export const Social = styled.div`
     width: 50px;
     cursor: pointer;
     justify-content: center;
-    
-
   }
   #product {
     align-items: center;
@@ -95,7 +93,6 @@ export const Social = styled.div`
       margin-left: 26.5rem;
       widht: 3.1rem;
       height: 1.4rem;
-
     }
   }
   p.pProduct {
@@ -106,7 +103,6 @@ export const Social = styled.div`
     font-style: normal;
     font-size: 16px;
     color: #fff;
-
   }
   p.pRserved {
     margin-top: -35px;
