@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-
-`
+export const Container = styled.div``
 
 export const Body = styled.div`
+  margin-bottom: 120px;
   height: 600px;
   flex-direction: column;
   display: flex;
@@ -33,7 +32,7 @@ export const Body = styled.div`
       height: 61px;
       widht: 114px;
       justify-content: center;
-      margin-left : 2.20rem;
+      margin-left: 2.2rem;
     }
   }
 
@@ -42,8 +41,6 @@ export const Body = styled.div`
     background-color: #f9f9f9;
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
-    
-
   }
 
   #Linkation {

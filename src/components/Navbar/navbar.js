@@ -3,15 +3,14 @@ import * as S from './styles'
 import { FaBell } from 'react-icons/fa'
 import LogoWhite from '../../assets/LogoWhite.svg'
 import procura from '../../assets/procura.svg'
-import Button from '../../components/Button/index'
+import Notification from '../../assets/Notification.svg'
+import Button from '../Button'
+
+const isLogged = false
 
 function Navbar(props) {
-
-  const isLogged = false
-
   return (
     <S.Container>
-
       <S.LogoContainer>
         <a href="/" class="Homepage">
           <button type="button">
@@ -21,23 +20,40 @@ function Navbar(props) {
         </a>
       </S.LogoContainer>
 
-
       <S.BuscaHeader>
         <img src={procura} id="btnBusca" alt="procura" />
         <input type="text" id="txtBusca" placeholder="Search" />
       </S.BuscaHeader>
 
       <S.ButtonsContainer>
-        <a href="/">Explore</a>
+        {props.explore ? <a href="/">Explore</a> : null}
 
-        <a href="/collaboratorRegistrationPage">
-          Torne-se um prestador
-          <br /> de serviços
-        </a>
+        {props.preste ? (
+          <a href="/collaboratorRegistrationPage">Preste Serviços</a>
+        ) : null}
 
-        <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
+        {props.login ? (
+          <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
+        ) : null}
 
-        <Button path='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor='White' borderRadius="76px" />
+        {props.cadastre ? (
+          <Button
+            path="/userRegistrationPage"
+            title="Cadastre-se"
+            ButtonColor="#39C0A8"
+            borderColor="1px solid #33FFDA"
+            textColor="White"
+            borderRadius="76px"
+          />
+        ) : null}
+
+        {props.home ? <a href="/">Home</a> : null}
+
+        {props.notification ? (
+          <button type="button">
+            <img src={Notification} alt="icon-notification" />
+          </button>
+        ) : null}
       </S.ButtonsContainer>
     </S.Container>
   )

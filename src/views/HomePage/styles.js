@@ -112,7 +112,10 @@ export const Container = styled.div`
   }
 
   #jobzInfo {
-    line-height: 7rem;
+    position: absolute;
+    left: 0px;
+    right: 500px;
+    line-height: 4rem;
     height: 17rem;
     width: 100%;
     display: column;
@@ -125,27 +128,32 @@ export const Container = styled.div`
     caret-color: transparent;
     background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
 
-    .button{
-
+    .button {
+      margin-top: 20px;
     }
   }
 
-#titleCategories{
-  margin-bottom: 1rem;   
-  justify-content: center;
-  margin-top: 5rem;
-  display: column;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #2f7b77;;
-}
+  #titleCategories {
+    margin-bottom: 1rem;
+    justify-content: center;
+    margin-top: 400px;
+    display: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #2f7b77;
+  }
 
-  #popularCategories{
+  #popCategories {
+    margin-bottom: 100px;
+    margin-right: 15px;
+  }
+
+  #popularCategories {
     caret-color: transparent;
     font-family: Montserrat;
     font-style: normal;
@@ -154,7 +162,7 @@ export const Container = styled.div`
     color: white;
     display: flex;
     justify-content: center;
-    p{
+    p {
       text-align: center;
       line-height: 60px;
       height: 60px;
@@ -163,6 +171,4 @@ export const Container = styled.div`
       margin-left: 1rem;
     }
   }
-
-
 `

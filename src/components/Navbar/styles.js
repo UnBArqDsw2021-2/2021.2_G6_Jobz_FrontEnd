@@ -11,8 +11,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
-
-  //border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
 `
 
 export const LogoContainer = styled.div`
@@ -27,7 +25,6 @@ export const LogoContainer = styled.div`
     width: 50px;
     cursor: pointer;
     justify-content: center;
-    
   }
 `
 
@@ -36,7 +33,7 @@ export const ButtonsContainer = styled.div`
   text-align: center;
   display: flex;
   align-items: center;
-  
+
   a {
     color: #fff;
     text-decoration: none;
@@ -48,6 +45,10 @@ export const ButtonsContainer = styled.div`
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+  }
+  button {
+    border-color: transparent;
+    background-color: transparent;
   }
 `
 export const BuscaHeader = styled.div`

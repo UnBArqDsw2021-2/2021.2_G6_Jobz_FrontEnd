@@ -1,23 +1,24 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
-height: 50px;
-margin-bottom: 50px;
+  height: 50px;
+  margin-bottom: 50px;
 `
 
 export const body = styled.div`
-display: flex;
-margin-top: 8%;
-height: 50rem;
-margin-bottom: 50rem;
-width: 100%;
+  display: flex;
+  margin-top: 8%;
+  height: 50rem;
+  margin-bottom: 50rem;
+  width: 100%;
 `
 export const navigationBar = styled.div`
-width: 30rem;
-margin-left: 5%;
+  margin-top: 70px;
+  width: 30rem;
+  margin-left: 5%;
 `
 export const rightSide = styled.div`
+  margin-top:40px;
   width: 30rem;
   font-family: Montserrat;
   font-style: normal;
@@ -42,7 +43,7 @@ comando{
 }
 
 addfile{
-  margin-top:20px;
+    margin-top:20px;
     input{
     margin-top: 14px;
   }
@@ -67,8 +68,4 @@ description{
 }
   
 )
-  
-
-
 `
-
