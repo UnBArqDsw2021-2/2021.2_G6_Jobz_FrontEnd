@@ -21,8 +21,8 @@ function Navbar(props) {
       </S.LogoContainer>
 
       <S.BuscaHeader>
-        <img src={procura} id="btnBusca" alt="procura" />
         <input type="text" id="txtBusca" placeholder="Search" />
+        <img src={procura} id="btnBusca" alt="procura" />
       </S.BuscaHeader>
 
       <S.ButtonsContainer>

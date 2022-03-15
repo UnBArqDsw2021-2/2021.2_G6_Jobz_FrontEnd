@@ -24,7 +24,7 @@ export const rightSide = styled.div`
   font-style: normal;
   font-weight: 600;
   color: #black;
-  margin-left:-8%;
+  margin-left:-13%;
 
 h1{
       caret-color: transparent;

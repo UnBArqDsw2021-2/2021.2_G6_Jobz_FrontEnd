@@ -60,11 +60,14 @@ export const BuscaHeader = styled.div`
   width: 317px;
 
   #btnBusca {
+    position:absolute;
     margin-left: 16px;
+    margin-right: 3px;
     padding-top: 1.0625rem;
   }
 
   #txtBusca {
+    margin-left:13px;
     box-shadow: 0 0 0 0;
     outline: 0;
     position: relative;
