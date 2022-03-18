@@ -7,12 +7,9 @@ export const Container = styled.div`
     border: 1px solid #c7b4b9;
     box-sizing: border-box;
     border-radius: 4px;
-    background-image: url();
-    background-repeat: no-repeat;
-
     width: 235.77px;
     height: 34.77px;
-    margin-bottom: 1.31rem;
+    margin-bottom: 14px;
     text-indent: 2.625rem;
     font-family: Montserrat;
     font-style: normal;
@@ -22,9 +19,7 @@ export const Container = styled.div`
     color: #ae163a;
     box-shadow: 0 0 0 0;
     outline: 0;  
+
   }
 
-  img{
-    background-color: white;
-  }
 `

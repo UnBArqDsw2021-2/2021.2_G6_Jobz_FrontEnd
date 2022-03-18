@@ -1,18 +1,17 @@
 import UserRegistrationPage from '../views/userRegistrationPage/index'
 import CollaboratorRegistrationPage from '../views/collaboratorRegistrationPage/index'
 import ServiceCreatePage from '../views/serviceCreatePage/index'
-import ServicePage from '../views/ServicesPage/index'
+import HomePage from '../views/HomePage/index'
 import LoginPage from '../views/loginPage/index'
-import HomePage from '../views/HomePage/homePage'
-import ProfilePage from '../views/ProfilePage/profile'
-
+import UserProfile from '../views/userProfile/index'
+import Security from '../views/security/index'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function directions() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/HomePage" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/userRegistrationPage"
           element={<UserRegistrationPage />}
@@ -22,13 +21,11 @@ function directions() {
           element={<CollaboratorRegistrationPage />}
         />
         <Route path="/serviceCreatePage" element={<ServiceCreatePage />} />
-        <Route path="/" element={<ServicePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/ProfilePage" element={<ProfilePage />} />
+        <Route path="/userProfile" element={<UserProfile />} />
+        <Route path="/security" element={<Security />} />
       </Routes>
     </BrowserRouter>
   )
 }
 export default directions
-
-/* <Route path='/' element={<HomePage />} />*/

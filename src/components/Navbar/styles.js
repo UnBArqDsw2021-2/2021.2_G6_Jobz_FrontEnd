@@ -11,8 +11,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
-
-  //border: 1px solid red; /* -=-=-=- TODO: delete this line -=-=-=-=- */
 `
 
 export const LogoContainer = styled.div`
@@ -36,8 +34,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 110px;
-
-  a {
+  a {   
     padding-left: 32px;
     color: #fff;
     text-decoration: none;
@@ -50,6 +47,7 @@ export const ButtonsContainer = styled.div`
     font-size: 16px;
     line-height: 20px;
   }
+
   button {
     border-color: transparent;
     background-color: transparent;
@@ -64,11 +62,14 @@ export const BuscaHeader = styled.div`
   width: 317px;
 
   #btnBusca {
+    position: absolute;
     margin-left: 16px;
+    margin-right: 3px;
     padding-top: 1.0625rem;
   }
 
   #txtBusca {
+    margin-left: 13px;
     box-shadow: 0 0 0 0;
     outline: 0;
     position: relative;

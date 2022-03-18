@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div``
 
 export const Body = styled.div`
-  height: 990px;
+  height: 650px;
+  margin-bottom: 120px;
   flex-direction: column;
   display: flex;
   background-color: #fff;
@@ -14,8 +15,7 @@ export const Body = styled.div`
     flex-direction: column;
     display: flex;
     align-items: center;
-    width: 643px;
-    height: 600px;
+    width: 640px;
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
@@ -26,6 +26,11 @@ export const Body = styled.div`
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
+      margin-left:90px;
+    }
+    p{
+      font-family: Montserrat;
+      font-size:16px;
     }
   }
 
@@ -35,29 +40,27 @@ export const Body = styled.div`
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
 
-    select{
+    select {
+      background-color: white;
+      border: 1px solid #c7b4b9;
+      box-sizing: border-box;
+      border-radius: 4px;
+      background-image: url();
+      background-repeat: no-repeat;
 
-    background-color: white;
-    border: 1px solid #c7b4b9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-image: url();
-    background-repeat: no-repeat;
-
-    width: 235.77px;
-    height: 34.77px;
-    margin-bottom: 1.31rem;
-    text-indent: 2.625rem;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: #ae163a;
-    box-shadow: 0 0 0 0;
-    outline: 0;
+      width: 235.77px;
+      height: 34.77px;
+      margin-bottom: 1.31rem;
+      text-indent: 2.625rem;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: #ae163a;
+      box-shadow: 0 0 0 0;
+      outline: 0;
     }
-
   }
   #Linkation {
     margin-left: -30px;
@@ -72,6 +75,5 @@ export const Body = styled.div`
       padding-left: 34px;
       color: #e38233;
     }
-
   }
 `

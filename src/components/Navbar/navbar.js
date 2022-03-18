@@ -4,6 +4,7 @@ import { FaBell } from 'react-icons/fa'
 import LogoWhite from '../../assets/LogoWhite.svg'
 import procura from '../../assets/procura.svg'
 import Notification from '../../assets/Notification.svg'
+import Button from '../Button'
 
 const isLogged = false
 
@@ -20,8 +21,8 @@ function Navbar(props) {
       </S.LogoContainer>
 
       <S.BuscaHeader>
-        <img src={procura} id="btnBusca" alt="procura" />
         <input type="text" id="txtBusca" placeholder="Search" />
+        <img src={procura} id="btnBusca" alt="procura" />
       </S.BuscaHeader>
 
       <S.ButtonsContainer>
@@ -32,11 +33,12 @@ function Navbar(props) {
         ) : null}
 
         {props.login ? (
-          <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
+          <a id="loginButton" href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
         ) : null}
 
         {props.cadastre ? (
-          <a href="/userRegistrationPage">Cadastre-se</a>
+          <Button path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
+          />
         ) : null}
 
         {props.home ? <a href="/">Home</a> : null}

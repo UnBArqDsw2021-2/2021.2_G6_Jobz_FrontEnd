@@ -1,48 +1,59 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div``
+
+export const RegistrationButton = styled.a`
+  font-family: Montserrat;
+  margin-top: 20px;
+  font-size: 15px;
+`
+export const Body = styled.div`
+  height: 400px;
   flex-direction: column;
-  margin-top: 7%;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  #GroupForm {
+    height: 370px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 370px;
+    background-color: #f9f9f9;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
+    border-radius: 10px;
+    p{
+      font-family: Montserrat;
+      font-size:16px;
+    }
+  }
 
   header {
-    margin-top: 4.1rem;
-    background-color: white;
-    font-size: 6.25rem;
+    margin-top: 23px;
+    margin-bottom: 40px;
+    caret-color: transparent;
+
     img {
-      background-color: white;
-      height: 5.625rem;
+      background-color: #f9f9f9;
+      height: 61px;
+      widht: 114px;
+      justify-content: center;
     }
   }
 
   form {
     padding: 0 1rem;
-    background-color: white;
+    background-color: #f9f9f9;
     justifycontent: 'space-between';
-    margin-top: 0.3125rem;
-
-    input {
-      width: 18.253rem;
-      height: 2.128rem;
-      margin-bottom: 1.31rem;
-      text-indent: 2.625rem;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-
-      color: #ae163a;
-    }
+    margin-top: -43px;
   }
-`;
 
-export const RegistrationButton = styled.a`
-  font-family: Montserrat;
-  margin-top: 24px;
-  text-decoration: none;
-  color: rgb(82, 19, 31);
-  font-size: 15px;
-`;
+  a {
+    margin-left: 65px;
+    padding-left: 34px;
+    color: #e38233;
+  }
+`

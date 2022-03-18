@@ -14,11 +14,13 @@ export const Container = styled.div`
     width: 27rem;
   }
   #btnBuscaSearch {
+    position: absolute;
     margin-left: 16px;
     padding-top: 1.0625rem;
   }
 
   #txtBuscaSearch {
+    margin-left: 15px;
     box-shadow: 0 0 0 0;
     outline: 0;
     border-radius: 1.625rem;
@@ -67,6 +69,7 @@ export const Container = styled.div`
 
   #services {
     display: flex;
+    justify-content: center;
     background-color: #fff;
     margin-top: 33.2rem;
     height: 33rem;
@@ -75,8 +78,10 @@ export const Container = styled.div`
     margin-top: 2.25rem;
   }
   #services .text p {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    width: 18.25rem;
+    width: 50rem;
     height: 2rem;
 
     font-family: Montserrat;
@@ -84,8 +89,6 @@ export const Container = styled.div`
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.8rem;
-    text-align: center;
-
     color: #2f7b77;
   }
 
@@ -108,5 +111,66 @@ export const Container = styled.div`
     font-weight: 600;
     font-size: 1.125rem;
     color: #000000;
+  }
+
+  #jobzInfo {
+    position: absolute;
+    left: 0px;
+    right: 500px;
+    line-height: 4rem;
+    height: 17rem;
+    width: 100%;
+    display: column;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: white;
+    caret-color: transparent;
+    background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
+
+    .button {
+      margin-top: 20px;
+    }
+  }
+
+  #titleCategories {
+    margin-bottom: 1rem;
+    justify-content: center;
+    margin-top: 400px;
+    display: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #2f7b77;
+  }
+
+  #popCategories {
+    margin-bottom: 100px;
+    margin-right: 15px;
+  }
+
+  #popularCategories {
+    caret-color: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    p {
+      text-align: center;
+      line-height: 60px;
+      height: 60px;
+      background: linear-gradient(90deg, #05323a 9.64%, #1e696c 89.85%);
+      width: 25rem;
+      margin-left: 1rem;
+    }
   }
 `
