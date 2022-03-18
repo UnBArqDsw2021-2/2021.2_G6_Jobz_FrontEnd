@@ -5,6 +5,7 @@ import HomePage from '../views/HomePage/index'
 import LoginPage from '../views/loginPage/index'
 import UserProfile from '../views/userProfile/index'
 import Security from '../views/security/index'
+import MyServicesPage from '../views/myServicesPage/index';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function directions() {
@@ -24,6 +25,7 @@ function directions() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/userProfile" element={<UserProfile />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/myServices" element={<MyServicesPage />} />
       </Routes>
     </BrowserRouter>
   )

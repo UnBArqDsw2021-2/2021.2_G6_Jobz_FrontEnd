@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { Axios } from 'axios'
 
-function UserRegistrationPage() {
+function MyServicesPage() {
   return (
     <S.Container>
       <S.body>
@@ -24,8 +22,7 @@ function UserRegistrationPage() {
             <Button
               path="/security"
               title="Login e Segurança"
-              ButtonColor="#39C0A8"
-              textColor="white"
+              textColor="gray"
               borderColor="1px solid #33FFDA"
             />
             <Button
@@ -45,17 +42,16 @@ function UserRegistrationPage() {
             <Button
               path="/myServices"
               title="Meus serviços"
-              ButtonColor="white"
-              textColor="gray"
+              ButtonColor="#39C0A8"
+              textColor="white"
               borderColor="1px solid gray"
             />
-            
           </sideBar>
         </S.navigationBar>
 
         <S.rightSide>
-          <h1> Log in and security </h1>
-          <comando> Gerencie suas informações de segurança abaixo </comando>
+          <h1> Meus serviços </h1>
+          <comando> Crie, visualize ou delete seus serviços disponíveis abaixo </comando>
           <hr />
 
           <email>
@@ -81,4 +77,4 @@ function UserRegistrationPage() {
   )
 }
 
-export default UserRegistrationPage
+export default MyServicesPage;
