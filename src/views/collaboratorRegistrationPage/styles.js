@@ -27,7 +27,7 @@ export const Body = styled.div`
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
-      margin-left:90px;
+      margin-left:100px;
     }
     p{
       font-family: Montserrat;
