@@ -13,11 +13,13 @@ export const body = styled.div`
   width: 100%;
 `
 export const navigationBar = styled.div`
-  margin-top: 70px;
+  margin-top: 100px;
   width: 30rem;
   margin-left: 5%;
 `
 export const rightSide = styled.div`
+  background-color: red;
+
   margin-top: 40px;
   width: 30rem;
   font-family: Montserrat;

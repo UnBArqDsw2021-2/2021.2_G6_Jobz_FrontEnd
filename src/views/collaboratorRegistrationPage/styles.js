@@ -10,6 +10,7 @@ export const Body = styled.div`
   background-color: #fff;
   align-items: center;
   margin-top: 178px;
+  
   #GroupForm {
     height: 990px;
     flex-direction: column;

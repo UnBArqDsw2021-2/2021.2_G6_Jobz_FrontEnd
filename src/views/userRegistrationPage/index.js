@@ -5,25 +5,30 @@ import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { Axios } from 'axios'
+import axios from 'axios'
+import api from '../../services/api'
 
 function UserRegistrationPage() {
-  const url = ''
+
+  const url = api
   const [data, setData] = useState({
     name: '',
     email: '',
     cpf: '',
-    phoneNumber: '',
+    phone: '',
     password: ''
   })
 
   function submit(e) {
+    //const back = data;
+    //console.log("back", data) verifica se dados chegaram até aqui
     e.preventDefault()
-    Axios.post(url, {
+
+    axios.post(url, {
       name: data.name,
       email: data.email,
       cpf: data.cpf,
-      phoneNumber: data.phoneNumber,
+      phone: data.phone,
       password: data.password
     }).then(res => {
       console.log(res.data)
@@ -49,49 +54,14 @@ function UserRegistrationPage() {
           </header>
 
           <form onSubmit={e => submit(e)}>
-            <Input
-              onChange={e => handle(e)}
-              id="name"
-              value={data.name}
-              placeholder="NOME"
-              type="text"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="email"
-              value={data.email}
-              placeholder="EMAIL"
-              type="email"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="cpf"
-              value={data.cpf}
-              placeholder="CPF"
-              type="number"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="phoneNumber"
-              value={data.phoneNumber}
-              placeholder="TELEFONE"
-              type="number"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="password"
-              value={data.password}
-              placeholder="SENHA"
-              type="password"
-              required
-            />
+            <Input onChange={e => handle(e)} id="name" placeholder="NOME" type="text" required />
+            <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required />
+            <Input onChange={e => handle(e)} id="cpf" placeholder="CPF" type="number" required />
+            <Input onChange={e => handle(e)} id="phone" placeholder="TELEFONE" type="number" required />
+            <Input onChange={e => handle(e)} id="password" placeholder="SENHA" type="password" required />
             <Input placeholder="CONFIRMAR SENHA" type="password" required />
             <br></br>
-            <Button type="submit" title={'CRIAR CONTA'} />
+            <Button type="submit" title={'CRIAR CONTA'} required />
           </form>
 
           <div id="Linkation">
@@ -100,7 +70,7 @@ function UserRegistrationPage() {
             </a>
 
             <br></br>
-            <a class="a1" href="/">
+            <a className="a1" href="/">
               Esqueceu a<br></br>senha?
             </a>
           </div>
