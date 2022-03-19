@@ -49,8 +49,7 @@ function UserRegistrationPage() {
         <div id="GroupForm">
           <header>
             <img src={logo} alt="logo" />
-            <br></br>
-            CADASTRO DE CLIENTE
+            <p>CADASTRO DE CLIENTE</p>
           </header>
 
           <form onSubmit={e => submit(e)}>

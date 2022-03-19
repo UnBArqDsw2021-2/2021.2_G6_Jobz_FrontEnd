@@ -8,7 +8,7 @@ export const RegistrationButton = styled.a`
   font-size: 15px;
 `
 export const Body = styled.div`
-  height: 450px;
+  height: 400px;
   flex-direction: column;
   display: flex;
   background-color: #fff;
@@ -17,7 +17,7 @@ export const Body = styled.div`
   margin-bottom: 200px;
 
   #GroupForm {
-    height: 390px;
+    height: 370px;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -25,10 +25,14 @@ export const Body = styled.div`
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
+    p{
+      font-family: Montserrat;
+      font-size:16px;
+    }
   }
 
   header {
-    margin-top: 12px;
+    margin-top: 23px;
     margin-bottom: 40px;
     caret-color: transparent;
 
@@ -37,7 +41,6 @@ export const Body = styled.div`
       height: 61px;
       widht: 114px;
       justify-content: center;
-      margin-left: 2.2rem;
     }
   }
 
@@ -45,11 +48,7 @@ export const Body = styled.div`
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
-    margin-top: 0.3125rem;
-  }
-
-  Button {
-    margin-top: 40px;
+    margin-top: -43px;
   }
 
   a {

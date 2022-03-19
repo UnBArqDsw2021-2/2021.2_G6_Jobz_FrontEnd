@@ -42,20 +42,10 @@ function LoginPage() {
           </header>
 
           <form onSubmit={e => submit(e)}>
-            <Input
-              onChange={e => handle(e)}
-              id="email"
-              placeholder="EMAIL"
-              type="email"
-              required
+            <p>LOGIN</p>
+            <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required
             />
-            <Input
-              onChange={e => handle(e)}
-              id="password"
-              value={data.password}
-              placeholder="SENHA"
-              type="password"
-              required
+            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required
             />
             <br></br>
             <Button type="submit" title={'LOGIN'} />

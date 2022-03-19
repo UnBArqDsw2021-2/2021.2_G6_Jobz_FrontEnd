@@ -24,8 +24,13 @@ export const Body = styled.div`
   }
 
   header {
-    margin-top: 12px;
+    margin-top: 14px;
     caret-color: transparent;
+    p{
+      font-family: Montserrat;
+      font-size:16px;
+      margin-top:-1px;
+    }
 
     img {
       background-color: #f9f9f9;

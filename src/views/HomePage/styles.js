@@ -20,7 +20,7 @@ export const Container = styled.div`
   }
 
   #txtBuscaSearch {
-    margin-left:15px;
+    margin-left: 15px;
     box-shadow: 0 0 0 0;
     outline: 0;
     border-radius: 1.625rem;

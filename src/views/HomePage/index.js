@@ -77,6 +77,7 @@ function ServicesPage() {
           borderColor="1px solid #33FFDA"
           textColor="White"
           borderRadius="76px"
+          buttonWidth="130px"
         />
       </section>
 

@@ -33,8 +33,9 @@ export const ButtonsContainer = styled.div`
   text-align: center;
   display: flex;
   align-items: center;
-
-  a {
+  margin-left: 110px;
+  a {   
+    padding-left: 32px;
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.2px;
@@ -46,6 +47,7 @@ export const ButtonsContainer = styled.div`
     font-size: 16px;
     line-height: 20px;
   }
+
   button {
     border-color: transparent;
     background-color: transparent;
@@ -60,14 +62,14 @@ export const BuscaHeader = styled.div`
   width: 317px;
 
   #btnBusca {
-    position:absolute;
+    position: absolute;
     margin-left: 16px;
     margin-right: 3px;
     padding-top: 1.0625rem;
   }
 
   #txtBusca {
-    margin-left:13px;
+    margin-left: 13px;
     box-shadow: 0 0 0 0;
     outline: 0;
     position: relative;

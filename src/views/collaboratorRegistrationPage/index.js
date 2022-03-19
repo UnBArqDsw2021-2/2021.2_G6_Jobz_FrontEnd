@@ -51,8 +51,8 @@ function UserRegistrationPage() {
         <div id="GroupForm">
           <header>
             <img src={logo} alt="logo" />
+            <p>CADASTRO DE PRESTADOR DE SERVIÇO</p>
           </header>
-          CADASTRO DE PRESTADOR DE SERVIÇO
           <form onSubmit={e => submit(e)}>
             <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" color="red" />
             <Input onChange={e => handle(e)} id="email" value={data.email} placeholder="EMAIL" type="email" required />

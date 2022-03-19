@@ -14,33 +14,13 @@ function UserRegistrationPage() {
         <Navbar home={true} explore={true} notification={true} />
         <S.navigationBar>
           <sideBar>
-            <Button
-              path="/"
-              title="Perfil"
-              ButtonColor="#39C0A8"
-              textColor="white"
-              borderColor="1px solid #33FFDA"
+            <Button path="/" title="Perfil" ButtonColor="#39C0A8" textColor="white" borderColor="1px solid #33FFDA"
             />
-            <Button
-              path="/security"
-              title="Login e Segurança"
-              ButtonColor="white"
-              textColor="gray"
-              borderColor="1px solid gray"
+            <Button path="/security" title="Login e Segurança" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
-            <Button
-              path="/"
-              title="Pagamentos"
-              ButtonColor="white"
-              textColor="gray"
-              borderColor="1px solid gray"
+            <Button path="/" title="Pagamentos" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
-            <Button
-              path="/"
-              title="Notificações"
-              ButtonColor="white"
-              textColor="gray"
-              borderColor="1px solid gray"
+            <Button path="/" title="Notificações" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
           </sideBar>
         </S.navigationBar>

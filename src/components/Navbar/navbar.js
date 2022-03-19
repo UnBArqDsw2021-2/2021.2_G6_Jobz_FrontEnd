@@ -33,17 +33,11 @@ function Navbar(props) {
         ) : null}
 
         {props.login ? (
-          <a href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
+          <a id="loginButton" href="/login">{isLogged ? <FaBell /> : 'Login'}</a>
         ) : null}
 
         {props.cadastre ? (
-          <Button
-            path="/userRegistrationPage"
-            title="Cadastre-se"
-            ButtonColor="#39C0A8"
-            borderColor="1px solid #33FFDA"
-            textColor="White"
-            borderRadius="76px"
+          <Button path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
           />
         ) : null}
 

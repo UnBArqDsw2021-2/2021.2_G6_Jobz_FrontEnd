@@ -5,7 +5,7 @@ export const Container = styled.div`
     background-color: ${props =>
       props.ButtonColor ? props.ButtonColor : 'white'};
 
-    width: ${props => (props.buttonWidht ? props.buttonWidht : '235px')};
+    width: ${props => (props.buttonWidth ? props.buttonWidth : '235px')};
     height: ${props => (props.buttonHeight ? props.buttonHeight : '34px')};
     border: ${props =>
       props.borderColor ? props.borderColor : '1px solid #c7b4b9'};
@@ -26,8 +26,6 @@ export const Container = styled.div`
       font-weight: normal;
       font-size: 16px;
       line-height: 20px;
-      /* or 125% */
-
       text-align: center;
 
       color: ${props => (props.textColor ? props.textColor : '#ae163a')};

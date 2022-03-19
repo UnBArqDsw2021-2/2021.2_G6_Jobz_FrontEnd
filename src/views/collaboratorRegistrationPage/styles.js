@@ -16,8 +16,7 @@ export const Body = styled.div`
     flex-direction: column;
     display: flex;
     align-items: center;
-    width: 643px;
-    height: 600px;
+    width: 640px;
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
@@ -28,6 +27,11 @@ export const Body = styled.div`
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
+      margin-left:90px;
+    }
+    p{
+      font-family: Montserrat;
+      font-size:16px;
     }
   }
 
