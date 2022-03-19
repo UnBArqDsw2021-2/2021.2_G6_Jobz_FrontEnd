@@ -10,7 +10,7 @@ export const Container = styled.div`
     width: 235.77px;
     height: 34.77px;
     margin-bottom: 14px;
-    text-indent: 2.625rem;
+    text-indent: 32px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;

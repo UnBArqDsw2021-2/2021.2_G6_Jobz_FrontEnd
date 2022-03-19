@@ -35,6 +35,14 @@ export const Body = styled.div`
   }
 
   form {
+    input[type=number]::-webkit-inner-spin-button { 
+      -webkit-appearance: none;
+      
+  }
+  input[type=number] { 
+     -moz-appearance: textfield;
+     appearance: textfield;
+  }
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
@@ -51,7 +59,7 @@ export const Body = styled.div`
       width: 235.77px;
       height: 34.77px;
       margin-bottom: 1.31rem;
-      text-indent: 2.625rem;
+      text-indent: 32px;
       font-family: Montserrat;
       font-style: normal;
       font-weight: 300;

@@ -42,6 +42,15 @@ export const Body = styled.div`
   }
 
   form {
+    input[type=number]::-webkit-inner-spin-button { 
+      -webkit-appearance: none;
+      
+  }
+  input[type=number] { 
+     -moz-appearance: textfield;
+     appearance: textfield;
+  
+  }
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
