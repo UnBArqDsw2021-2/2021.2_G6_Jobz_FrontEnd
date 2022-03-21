@@ -11,6 +11,7 @@ function Footer(props) {
       <S.LogoContainer>
         <img src={LogoWhite} id="logowhite" alt="logo branca" />
       </S.LogoContainer>
+
       <S.Contact>
         <p class="pPhone">55 61 992331722</p>
         <p class="pEmail">support@Jobz.agency</p>
@@ -48,15 +49,10 @@ function Footer(props) {
               <img src={Facebook} id="facebook" alt="logo Facebook" />
             </button>
           </a>
-
+            <p class="pProduct">A product of </p>
+            <p class="pRserved">© 2022 Jobz. All rights reserved</p>
         </div>
-        <div id="product">
-          <p class="pProduct">A product of </p>
-          <img src={LogoWhite} id="logosmall" alt="logo branca" />
-          <p class="pRserved">© 2022 Jobz. All rights reserved</p>
-
-        </div>
-
+        <img src={LogoWhite} id="logosmall" alt="logo branca" />
       </S.Social>
     </S.Container>
   )
