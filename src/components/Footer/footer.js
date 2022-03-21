@@ -13,12 +13,12 @@ function Footer(props) {
       </S.LogoContainer>
 
       <S.Contact>
-        <p class="pPhone">55 61 992331722</p>
         <p class="pEmail">support@Jobz.agency</p>
       </S.Contact>
 
       <S.Repositories>
-        <a id="documentacao" href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_docs"> {' '}Documentação do Jobz</a>
+        <p>Links:</p>
+        <a id="documentacao" href="https://unbarqdsw2021-2.github.io/2021.2_G6_Jobz_docs/#/"> {' '}Documentação do Jobz</a>
         <br></br> <br></br>
         <a href="https://github.com/UnBArqDsw2021-2/2021.2_G6_Jobz_FrontEnd"> {' '} Repositório do FrontEnd</a>
         <br></br> <br></br>
@@ -49,8 +49,8 @@ function Footer(props) {
               <img src={Facebook} id="facebook" alt="logo Facebook" />
             </button>
           </a>
-            <p class="pProduct">A product of </p>
-            <p class="pRserved">© 2022 Jobz. All rights reserved</p>
+          <p class="pProduct">A product of </p>
+          <p class="pRserved">© 2022 Jobz. All rights reserved</p>
         </div>
         <img src={LogoWhite} id="logosmall" alt="logo branca" />
       </S.Social>

@@ -24,14 +24,7 @@ export const Contact = styled.div`
   width: 161.37px;
   height: 46.82px;
   padding-top: 57px;
-  p.pPhone {
-    height: 6px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-size: 20px;
 
-    color: #ffffff;
-  }
   p.pEmail {
     font-family: 'Montserrat';
     font-style: normal;
@@ -46,9 +39,9 @@ export const Repositories = styled.div`
   position: absolute;
   left: 50%;
   width: 200px;
-  margin-top: 35px;
+  margin-top: -1px;
   opacity: 0.9;
-
+  color: white;
   a {
     color: white;
   }
