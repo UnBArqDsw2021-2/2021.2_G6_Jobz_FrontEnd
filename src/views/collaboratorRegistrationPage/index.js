@@ -67,7 +67,7 @@ function UserRegistrationPage() {
           <div id="Linkation">
             <a href="/userRegistrationPage">É um cliente?</a>
             <br></br>
-            <a class="a1" href="/">
+            <a className="a1" href="/">
               Esqueceu a<br></br>senha?
             </a>
           </div>

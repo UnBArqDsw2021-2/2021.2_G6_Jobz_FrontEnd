@@ -12,7 +12,7 @@ function Navbar(props) {
   return (
     <S.Container>
       <S.LogoContainer>
-        <a href="/" class="Homepage">
+        <a href="/" className="Homepage">
           <button type="button">
             {' '}
             <img src={LogoWhite} alt="logo-white" />
