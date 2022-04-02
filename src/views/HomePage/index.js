@@ -9,7 +9,8 @@ import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import Button from '../../components/Button/index'
 
-function ServicesPage() {
+function HomePage() {
+
   return (
     <S.Container>
       <Navbar explore={true} preste={true} login={true} cadastre={true} />
@@ -71,14 +72,8 @@ function ServicesPage() {
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
         <Button
-          path="/userRegistrationPage"
-          title="Cadastre-se"
-          ButtonColor="#39C0A8"
-          borderColor="1px solid #33FFDA"
-          textColor="White"
-          borderRadius="76px"
-          buttonWidth="130px"
-        />
+          path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
+        /> 
       </section>
 
       <section id="titleCategories">Categorias populares</section>
@@ -107,4 +102,4 @@ function ServicesPage() {
   )
 }
 
-export default ServicesPage
+export default HomePage
