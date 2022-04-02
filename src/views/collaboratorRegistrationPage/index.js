@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
