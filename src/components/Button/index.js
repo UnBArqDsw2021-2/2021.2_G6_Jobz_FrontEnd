@@ -6,14 +6,16 @@ function Button(props) {
   let navigate = useNavigate()
 
   function navigateToPage() {
-    navigate(props.path)
+    const path = props.path
+    if (path == null) {
+    } else {
+      navigate(props.path)
+    }
   }
 
   return (
-    <S.Container
-      buttonWidth={props.buttonWidth} ButtonColor={props.ButtonColor} textColor={props.textColor} borderColor={props.borderColor} borderRadius={props.borderRadius}
-    >
-      {props => (props.path ? props.path : 'userRegistrationPage')}
+    <S.Container {...props}>
+      {props => (props.path ? props.path : null)}
       <button onClick={navigateToPage} className="button">
         <span> {props.title}</span>
       </button>

@@ -47,6 +47,10 @@ export const ButtonsContainer = styled.div`
     font-size: 16px;
     line-height: 20px;
   }
+  
+  #loginButton{
+    margin-right:40px;
+  }
 
   button {
     border-color: transparent;

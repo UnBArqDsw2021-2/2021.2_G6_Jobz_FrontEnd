@@ -10,6 +10,7 @@ export const Body = styled.div`
   background-color: #fff;
   align-items: center;
   margin-top: 178px;
+  
   #GroupForm {
     height: 990px;
     flex-direction: column;
@@ -26,7 +27,7 @@ export const Body = styled.div`
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
-      margin-left:90px;
+      margin-left:100px;
     }
     p{
       font-family: Montserrat;
@@ -35,11 +36,20 @@ export const Body = styled.div`
   }
 
   form {
+    input[type=number]::-webkit-inner-spin-button { 
+      -webkit-appearance: none;
+      
+  }
+  input[type=number] { 
+     -moz-appearance: textfield;
+     appearance: textfield;
+  }
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
 
+<<<<<<< HEAD
     select {
       background-color: white;
       border: 1px solid #c7b4b9;
@@ -51,7 +61,7 @@ export const Body = styled.div`
       width: 235.77px;
       height: 34.77px;
       margin-bottom: 1.31rem;
-      text-indent: 2.625rem;
+      text-indent: 32px;
       font-family: Montserrat;
       font-style: normal;
       font-weight: 300;
@@ -61,6 +71,8 @@ export const Body = styled.div`
       box-shadow: 0 0 0 0;
       outline: 0;
     }
+=======
+>>>>>>> 87ae71fa3f0c19cc0b30403558c775ef0bc6c1ef
   }
   #Linkation {
     margin-left: -30px;

@@ -6,7 +6,7 @@ import fundoVerde from '../../assets/fundoVerde.png'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { Axios } from 'axios'
+import { axios } from 'axios'
 
 function LoginPage() {
   const url = ''
@@ -17,7 +17,7 @@ function LoginPage() {
 
   function submit(e) {
     e.preventDefault()
-    Axios.post(url, {
+    axios.post(url, {
       email: data.email,
       password: data.password
     }).then(res => {
