@@ -6,17 +6,24 @@ import fundoVerde from '../../assets/fundoVerde.png'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
+import api from '../../services/api'
 import { axios } from 'axios'
 
+//localhost: 8000 / api - auth / login /
+
 function LoginPage() {
-  const url = ''
+  const url = 'api-auth/login/?next=/user/'
+
   const [data, setData] = useState({
     email: '',
     password: ''
   })
 
   function submit(e) {
+    const back = data;
+    console.log("back", data)
     e.preventDefault()
+
     axios.post(url, {
       email: data.email,
       password: data.password
@@ -45,10 +52,9 @@ function LoginPage() {
             <p>LOGIN</p>
             <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required
             />
-            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required
-            />
+            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required />
             <br></br>
-            <Button type="submit" title={'LOGIN'} />
+            <Button type="submit" title={'LOGIN'} required />
           </form>
 
           <S.RegistrationButton href="/userRegistrationPage">
