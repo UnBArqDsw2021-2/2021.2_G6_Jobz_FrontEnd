@@ -13,7 +13,7 @@ function Footer(props) {
       </S.LogoContainer>
 
       <S.Contact>
-        <p class="pEmail">support@Jobz.agency</p>
+        <p className="pEmail">support@Jobz.agency</p>
       </S.Contact>
 
       <S.Repositories>
@@ -30,27 +30,27 @@ function Footer(props) {
       <S.Social>
         <div id="social">
 
-          <a href="https://www.linkedin.com/" class="linkedin" >
+          <a href="https://www.linkedin.com/" className="linkedin" >
             <button type="button">
               {' '}
               <img src={Linkedin} id="linkedin" alt="logo linkedin" />
             </button>
           </a>
-          <a href="https://twitter.com/" class="twitter">
+          <a href="https://twitter.com/" className="twitter">
             <button type="button">
               {' '}
               <img src={Twitter} id="twitter" alt="logo Twitter" />
             </button>
           </a>
 
-          <a href="https://www.facebook.com/" class="facebook">
+          <a href="https://www.facebook.com/" className="facebook">
             <button type="button">
               {' '}
               <img src={Facebook} id="facebook" alt="logo Facebook" />
             </button>
           </a>
-            <p class="pProduct">A product of </p>
-            <p class="pRserved">© 2022 Jobz. All rights reserved</p>
+          <p className="pProduct">A product of </p>
+          <p className="pRserved">© 2022 Jobz. All rights reserved</p>
         </div>
         <img src={LogoWhite} id="logosmall" alt="logo branca" />
       </S.Social>

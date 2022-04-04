@@ -1,7 +1,8 @@
 build:
 	docker build -t jobzfront .
 run:
-	docker run -it -v ${PWD}:/app -v /app/node_modules -p 3000:3000 jobzfront
+	docker container rm -f frontend
+	docker-compose up -d
 
 stop:
 	docker-compose down

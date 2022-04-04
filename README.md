@@ -27,22 +27,31 @@ docker compose => 1.29.2
 
 ## Como rodar
 ### Primeira execução:
+- Primeiro você deve criar a imagem necessária para rodar o ambiente, para isso você deve usar o comando:
 
+```
     make build
+```
 
-### Subir o ambiente:
+- Em seguida é necessário subir o container do ambiente com o comando:
+```
     make run
+```
+### Comandos individuais:
 
-### Parar o ambiente:
+- Subir containers de ambiente:
+```
+    make run
+```
+
+- Parar containers de ambiente:
+```
     make stop
+```
 
-### Comandos extras:
-Remover o container de frontend
-
-    make remove
-
-Entrar no container do frontend
-
+- Entrar no container do frontend:
+```
     make front
+```
 
 

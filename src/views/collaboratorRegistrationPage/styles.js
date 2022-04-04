@@ -36,32 +36,24 @@ export const Body = styled.div`
   }
 
   form {
+    input[type=number]::-webkit-inner-spin-button { 
+      -webkit-appearance: none;
+      
+  }
+  input[type=number] { 
+     -moz-appearance: textfield;
+     appearance: textfield;
+  }
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
-    margin-top: 0.3125rem;
-
-    select {
-      background-color: white;
-      border: 1px solid #c7b4b9;
-      box-sizing: border-box;
-      border-radius: 4px;
-      background-image: url();
-      background-repeat: no-repeat;
-
-      width: 235.77px;
-      height: 34.77px;
-      margin-bottom: 1.31rem;
-      text-indent: 2.625rem;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      color: #ae163a;
-      box-shadow: 0 0 0 0;
-      outline: 0;
-    }
+    margin-top: 5px;
   }
   #Linkation {
     margin-left: -30px;
