@@ -19,6 +19,12 @@ function UserRegistrationPage() {
     console.log(form);
   }
 
+  function onFormChange(e) {
+    const newdata = { ...form }
+    newdata[e.target.id] = e.target.value
+    setForm(newdata)
+  }
+
   useEffect(() => {
     // TODO: Pegar informações do back pela rota que pega os dados do usuário que está autenticado
   });
@@ -51,7 +57,14 @@ function UserRegistrationPage() {
           <br></br>
           <br></br>
           Nome:
-          <Input />
+          <Input 
+            onChange={e => onFormChange(e)}
+            id="name"
+            value={form.name}
+            placeholder="Digite o nome aqui..."
+            type="text"
+            color="red"
+          />
           Cpf:
           <Input />
           Email:
