@@ -17,6 +17,7 @@ function UserRegistrationPage() {
 
   function onSubmitForm() {
     console.log(form);
+    // TODO: Integrar com axios pra mandar as informações atualizadas desse usuário em uma rota de atualização autenticada 
   }
 
   function onFormChange(e) {
