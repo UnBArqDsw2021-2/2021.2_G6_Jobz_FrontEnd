@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../../components/Button'
 import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
@@ -14,7 +14,14 @@ function UserRegistrationPage() {
     email: null,
     phone: null,
   });
-  
+
+  function onSubmitForm() {
+    console.log(form);
+  }
+
+  useEffect(() => {
+  });
+
   return (
     <S.Container>
       <S.body>
@@ -51,7 +58,7 @@ function UserRegistrationPage() {
           Telefone:
           <Input />
           <br></br>
-          <Button title="Enviar" />
+          <Button onClick={() => onSubmitForm() }title="Enviar" />
         </S.rightSide>
       </S.body>
 
