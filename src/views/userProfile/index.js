@@ -66,11 +66,33 @@ function UserRegistrationPage() {
             color="red"
           />
           Cpf:
-          <Input />
+          <Input 
+            onChange={e => onFormChange(e)}
+            id="cpf"
+            value={form.cpf}
+            placeholder="Digite o cpf aqui..."
+            type="text"
+            color="red"
+          />
           Email:
-          <Input />
+          <Input 
+            onChange={e => onFormChange(e)}
+            id="email"
+            value={form.email}
+            placeholder="Digite o email aqui..."
+            type="text"
+            color="red"
+            disabled
+          />
           Telefone:
-          <Input />
+          <Input 
+            onChange={e => onFormChange(e)}
+            id="phone"
+            value={form.phone}
+            placeholder="Digite o telefone aqui..."
+            type="text"
+            color="red"
+          />
           <br></br>
           <Button onClick={() => onSubmitForm() }title="Enviar" />
         </S.rightSide>
