@@ -8,6 +8,8 @@ import Footer from '../../components/Footer/footer'
 import { Axios } from 'axios'
 
 function UserRegistrationPage() {
+  const [form, setForm] = useState({})
+  
   return (
     <S.Container>
       <S.body>
@@ -37,10 +39,8 @@ function UserRegistrationPage() {
           <br></br>
           Nome:
           <Input />
-          <description>
-            Descrição:
-            <Input />
-          </description>
+          Cpf:
+          <Input />
           Email:
           <Input />
           Telefone:
