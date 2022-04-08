@@ -8,7 +8,12 @@ import Footer from '../../components/Footer/footer'
 import { Axios } from 'axios'
 
 function UserRegistrationPage() {
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({
+    name: null,
+    cpf: null,
+    email: null,
+    phone: null,
+  });
   
   return (
     <S.Container>
