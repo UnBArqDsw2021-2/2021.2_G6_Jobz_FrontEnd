@@ -20,6 +20,7 @@ function UserRegistrationPage() {
   }
 
   useEffect(() => {
+    // TODO: Pegar informações do back pela rota que pega os dados do usuário que está autenticado
   });
 
   return (
