@@ -71,8 +71,7 @@ function HomePage() {
           <br />
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
-        <Button
-          path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
+        <Button path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
         /> 
       </section>
 
