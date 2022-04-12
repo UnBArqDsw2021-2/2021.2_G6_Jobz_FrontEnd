@@ -6,16 +6,15 @@ function Button(props) {
   let navigate = useNavigate()
 
   function navigateToPage() {
-    const path = props.path
+    const path = props.path ? props.path : null;
     if (path == null) {
     } else {
-      navigate(props.path)
+      navigate(path);
     }
   }
 
   return (
     <S.Container {...props}>
-      {props => (props.path ? props.path : null)}
       <button onClick={navigateToPage} className="button">
         <span> {props.title}</span>
       </button>
