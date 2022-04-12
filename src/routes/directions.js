@@ -8,7 +8,6 @@ import React from 'react'
 
 function Directions() {
 
-
   return (
     <BrowserRouter>
       <AuthProvider>

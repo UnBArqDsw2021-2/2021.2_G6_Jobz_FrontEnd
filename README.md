@@ -53,6 +53,5 @@ docker compose => 1.29.2
 ```
     make front
 ```
->>>>>>> 6539200b5fa1dc8d2e2e190e2ee39da5842e56f8
 
 

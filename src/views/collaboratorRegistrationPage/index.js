@@ -6,8 +6,6 @@ import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import Select from 'react-select';
-import axios from 'axios'
-import api from '../../services/api'
 import { useNavigate } from 'react-router-dom'
 import content from './static'
 import { collaboratorRegistration } from '../../services/api'
@@ -15,7 +13,6 @@ import { collaboratorRegistration } from '../../services/api'
 function CollaboratorRegistrationPage() {
 
   let navigate = useNavigate()
-
 
   const [data, setData] = useState({
     name: '',

@@ -45,9 +45,16 @@ export const Body = styled.div`
      appearance: textfield;
   }
 
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
+
     margin-top: 0.3125rem;
 
      select {
@@ -83,6 +90,7 @@ export const Body = styled.div`
     background-color: #f9f9f9;
     justifycontent: 'space-between';
     margin-top: 5px;
+
 
   }
   #Linkation {

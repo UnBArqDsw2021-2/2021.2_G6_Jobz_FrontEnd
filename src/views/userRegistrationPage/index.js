@@ -5,7 +5,6 @@ import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-
 import { useNavigate } from 'react-router-dom'
 import { userRegistration } from '../../services/api'
 
@@ -28,7 +27,6 @@ function UserRegistrationPage() {
 
     userRegistration(data.name, data.email, data.cpf, data.phone, data.password);
     navigate('/login');
-
   }
 
   function handle(e) {
