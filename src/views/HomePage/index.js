@@ -14,13 +14,6 @@ function HomePage() {
 
   const { authenticated } = useContext(AuthContext);
 
-  let auth;
-  if (String(authenticated) === 'false') {
-    auth = null;
-  } else {
-    auth = true;
-  }
-
   return (
     <S.Container>
       <Navbar />

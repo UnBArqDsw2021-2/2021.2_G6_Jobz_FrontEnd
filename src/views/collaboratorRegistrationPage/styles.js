@@ -91,7 +91,6 @@ export const Body = styled.div`
     justifycontent: 'space-between';
     margin-top: 5px;
 
-
   }
   #Linkation {
     margin-left: -30px;
