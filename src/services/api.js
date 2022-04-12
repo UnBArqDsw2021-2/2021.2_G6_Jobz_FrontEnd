@@ -1,7 +1,18 @@
+import axios from "axios";
 
-const apiTeste = 'http://localhost:5500/api/'
-const apiBackEndLocal = 'http://localhost:8000/'
+export const api = axios.create({
+    baseURL: "http://localhost:8000",
+});
 
-const api = apiBackEndLocal;
+export const createSession = async (email, password) => {
+    return api.post("/api/token/obtain/", { email, password });
+}
 
-export default api;
+export const userRegistration = async (name, email, cpf, phone, password) => {
+    return api.post("/user/", { name, email, cpf, phone, password });
+}
+
+export const collaboratorRegistration = async (name,
+    email, cpf, phone, password, occupation) => {
+    return api.post("/provider/", { name, email, cpf, phone, password, occupation});
+}
