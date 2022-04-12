@@ -16,7 +16,6 @@ function CollaboratorRegistrationPage() {
 
   let navigate = useNavigate()
 
-
   const [data, setData] = useState({
     name: '',
     email: '',
