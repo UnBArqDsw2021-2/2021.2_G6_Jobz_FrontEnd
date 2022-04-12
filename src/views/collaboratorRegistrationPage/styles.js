@@ -44,13 +44,13 @@ export const Body = styled.div`
      -moz-appearance: textfield;
      appearance: textfield;
   }
+
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
     margin-top: 0.3125rem;
 
-<<<<<<< HEAD
-    select {
+     select {
       background-color: white;
       border: 1px solid #c7b4b9;
       box-sizing: border-box;
@@ -71,8 +71,19 @@ export const Body = styled.div`
       box-shadow: 0 0 0 0;
       outline: 0;
     }
-=======
->>>>>>> 87ae71fa3f0c19cc0b30403558c775ef0bc6c1ef
+
+
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
+    padding: 0 1rem;
+    background-color: #f9f9f9;
+    justifycontent: 'space-between';
+    margin-top: 5px;
+
   }
   #Linkation {
     margin-left: -30px;

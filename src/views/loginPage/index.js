@@ -1,35 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
-import fundoVerde from '../../assets/fundoVerde.png'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import api from '../../services/api'
-import { axios } from 'axios'
+import { AuthContext } from "../../context/auth"
 
-//localhost: 8000 / api - auth / login /
 
 function LoginPage() {
-  const url = 'api-auth/login/?next=/user/'
+
+  const { authenticated, login } = useContext(AuthContext);
 
   const [data, setData] = useState({
     email: '',
     password: ''
   })
 
+
   function submit(e) {
+    e.preventDefault() //não faça a ação padrão de atualizar a pagina
     const back = data;
     console.log("back", data)
-    e.preventDefault()
-
-    axios.post(url, {
-      email: data.email,
-      password: data.password
-    }).then(res => {
-      console.log(res.data)
-    })
+    login(data.email, data.password); // integracao com contexto e api
   }
 
   function handle(e) {
@@ -50,8 +43,7 @@ function LoginPage() {
 
           <form onSubmit={e => submit(e)}>
             <p>LOGIN</p>
-            <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required
-            />
+            <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required />
             <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required />
             <br></br>
             <Button type="submit" title={'LOGIN'} required />

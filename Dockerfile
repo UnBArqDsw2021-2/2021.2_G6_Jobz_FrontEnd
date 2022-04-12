@@ -1,9 +1,9 @@
-FROM node:latest
+
+FROM node:14
 WORKDIR /app
 COPY package.json ./
 #COPY package-lock.json ./
 RUN npm install
-RUN npm install -g create-react-app
 COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]

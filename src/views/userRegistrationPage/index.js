@@ -1,22 +1,17 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import axios from 'axios'
-import api from '../../services/api'
+
 import { useNavigate } from 'react-router-dom'
+import { userRegistration } from '../../services/api'
 
 function UserRegistrationPage() {
 
-  const url = api + 'user/'
   let navigate = useNavigate()
-
-  function navigateToPage() {
-    navigate('/')
-  }
 
   const [data, setData] = useState({
     name: '',
@@ -31,17 +26,9 @@ function UserRegistrationPage() {
     //console.log("back", data) verifica se dados chegaram até aqui
     e.preventDefault()
 
-    axios.post(url, {
-      name: data.name,
-      email: data.email,
-      cpf: data.cpf,
-      phone: data.phone,
-      password: data.password
-    }).then(res => {
-      console.log(res.data)
-      navigateToPage('/')
+    userRegistration(data.name, data.email, data.cpf, data.phone, data.password);
+    navigate('/login');
 
-    })
   }
 
   function handle(e) {

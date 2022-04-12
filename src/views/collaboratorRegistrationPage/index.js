@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
@@ -10,15 +10,12 @@ import axios from 'axios'
 import api from '../../services/api'
 import { useNavigate } from 'react-router-dom'
 import content from './static'
+import { collaboratorRegistration } from '../../services/api'
 
 function CollaboratorRegistrationPage() {
-  const url = api + 'provider/'
 
   let navigate = useNavigate()
 
-  function navigateToPage() {
-    navigate('/')
-  }
 
   const [data, setData] = useState({
     name: '',
@@ -34,17 +31,8 @@ function CollaboratorRegistrationPage() {
     // console.log("back", data) 
     e.preventDefault()
 
-    axios.post(url, {
-      name: data.name,
-      email: data.email,
-      cpf: data.cpf,
-      phone: data.phone,
-      password: data.password,
-      occupation: data.occupation
-    }).then(res => {
-      console.log(res.data)
-      navigateToPage()
-    })
+    collaboratorRegistration(data.name, data.email, data.cpf, data.phone, data.password, data.occupation)
+    navigate('/login');
   }
 
   function handle(e) {
