@@ -18,7 +18,7 @@ const card = (
         Serviço criado em: 22 de janeiro de 2022
       </Typography>
       <Typography variant="h5" component="div">
-          Serviço de programação
+        Serviço de programação
       </Typography>
       <Typography sx={{ mb: 1.5 }} color="text.secondary">
         Contato: 99913-8934
@@ -48,7 +48,7 @@ function MyServicesPage() {
     setServices(myServices.list.rows);
 
     setTimeout(() => console.log('services', services), 2000);
-}, []);
+  }, []);
 
   return (
     <S.Container>
@@ -67,7 +67,14 @@ function MyServicesPage() {
               path="/security"
               title="Login e Segurança"
               textColor="gray"
-              borderColor="1px solid #33FFDA"
+              borderColor="1px solid gray"
+            />
+            <Button
+              path="/myServices"
+              title="Meus serviços"
+              ButtonColor="#39C0A8"
+              textColor="white"
+              borderColor="1px solid gray"
             />
             <Button
               path="/"
@@ -83,13 +90,7 @@ function MyServicesPage() {
               textColor="gray"
               borderColor="1px solid gray"
             />
-            <Button
-              path="/myServices"
-              title="Meus serviços"
-              ButtonColor="#39C0A8"
-              textColor="white"
-              borderColor="1px solid gray"
-            />
+
           </sideBar>
         </S.navigationBar>
 

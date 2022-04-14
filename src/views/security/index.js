@@ -29,6 +29,13 @@ function UserRegistrationPage() {
               borderColor="1px solid #33FFDA"
             />
             <Button
+              path="/myServices"
+              title="Meus serviços"
+              ButtonColor="white"
+              textColor="gray"
+              borderColor="1px solid gray"
+            />
+            <Button
               path="/"
               title="Pagamentos"
               ButtonColor="white"
@@ -42,19 +49,12 @@ function UserRegistrationPage() {
               textColor="gray"
               borderColor="1px solid gray"
             />
-            <Button
-              path="/myServices"
-              title="Meus serviços"
-              ButtonColor="white"
-              textColor="gray"
-              borderColor="1px solid gray"
-            />
-            
+
           </sideBar>
         </S.navigationBar>
 
         <S.rightSide>
-          <h1> Log in and security </h1>
+          <h1> Login e Segurança </h1>
           <comando> Gerencie suas informações de segurança abaixo </comando>
           <hr />
 

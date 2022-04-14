@@ -40,11 +40,11 @@ function UserRegistrationPage() {
             />
             <Button path="/security" title="Login e Segurança" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
+            <Button path="/myServices" title="Meus serviços" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
+            />
             <Button path="/" title="Pagamentos" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
             <Button path="/" title="Notificações" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
-            />
-            <Button path="/myServices" title="Meus serviços" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
           </sideBar>
         </S.navigationBar>
@@ -60,7 +60,7 @@ function UserRegistrationPage() {
           <br></br>
           <br></br>
           Nome:
-          <Input 
+          <Input
             onChange={e => onFormChange(e)}
             id="name"
             value={form.name}
@@ -69,7 +69,7 @@ function UserRegistrationPage() {
             color="red"
           />
           Cpf:
-          <Input 
+          <Input
             onChange={e => onFormChange(e)}
             id="cpf"
             value={form.cpf}
@@ -78,7 +78,7 @@ function UserRegistrationPage() {
             color="red"
           />
           Email:
-          <Input 
+          <Input
             onChange={e => onFormChange(e)}
             id="email"
             value={form.email}
@@ -88,7 +88,7 @@ function UserRegistrationPage() {
             disabled
           />
           Telefone:
-          <Input 
+          <Input
             onChange={e => onFormChange(e)}
             id="phone"
             value={form.phone}
@@ -97,7 +97,7 @@ function UserRegistrationPage() {
             color="red"
           />
           <br></br>
-          <Button onClick={() => onSubmitForm() }title="Enviar" />
+          <Button onClick={() => onSubmitForm()} title="Enviar" />
         </S.rightSide>
       </S.body>
 
