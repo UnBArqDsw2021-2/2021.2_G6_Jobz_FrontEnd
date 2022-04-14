@@ -49,7 +49,7 @@ function HomePage() {
           </div>
 
           <div className="box">
-            <img src={ti} id="ti" alt="imagem tecnico em ti" />
+            <a href="/serviceTI"><img src={ti} id="ti" alt="imagem tecnico em ti" /></a>
             <br></br>
             <span>Assistência em TI</span>
           </div>
