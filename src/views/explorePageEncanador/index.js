@@ -3,8 +3,66 @@ import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import sinal from '../../assets/sinal.svg'
 import Button from '../../components/Button'
+import serviceTI from '../../assets/TiExample.png'
+import Diarista from '../../assets/Diarista.png'
+import Encanador from '../../assets/Encanador.png'
+import Pedreiro from '../../assets/pedreiro.png'
+import { api } from '../../services/api'
+import React, { useEffect, useState } from "react";
 
 function ExplorePageEncanador() {
+
+  function ocuppation(e){
+    if (e==0){
+      return "Diarista"
+    }
+    else if(e==1){
+      return "Encanador"
+    }
+    else if(e==2){
+      return "Pedreiro"
+    }
+    else{
+      return "Tecnico"
+    }
+  }
+
+  function image(e){
+    if (e==0){
+      return Diarista
+    }
+    else if(e==1){
+      return Encanador
+    }
+    else if(e==2){
+      return Pedreiro
+    }
+    else{
+      return serviceTI
+    }
+  }
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    api
+      .get("/provider")
+      .then((response) => setUser(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+  let i=0;
+  //console.log(user?.length)
+  function listItems ()
+  {
+        return listItems= user?.map((number)  =>
+        <div>
+        <img src={image(user[i]?.occupation)} alt=""></img>
+        <p id="titleService"> Nome do prestador: {user[i]?.name}</p>
+        <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
+        </div>
+        );
+  }
 
   return (
     <S.Container>
@@ -32,8 +90,14 @@ function ExplorePageEncanador() {
                         buttonHeight="58px"
                     />
                 </div>
+                <div id="serviceList">
+                    <li>
+                        {listItems()}
+                    </li>
+                </div>
             </header>
         </div>
+
       </S.Body>     
       <Footer />
     </S.Container>

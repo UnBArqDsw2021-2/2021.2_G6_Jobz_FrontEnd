@@ -122,7 +122,7 @@ margin-top:100px;
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 500;
-            font-size: 12px;
+            font-size: 15px;
             line-height: 17px;
 
             /* or 142% */

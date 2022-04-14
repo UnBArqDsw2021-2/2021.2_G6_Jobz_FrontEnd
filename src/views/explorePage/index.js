@@ -1,21 +1,66 @@
 import * as S from './styles'
+import React, { useEffect, useState } from "react";
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import sinal from '../../assets/sinal.svg'
 import Button from '../../components/Button'
 import serviceTI from '../../assets/TiExample.png'
-
+import Diarista from '../../assets/Diarista.png'
+import Encanador from '../../assets/Encanador.png'
+import Pedreiro from '../../assets/pedreiro.png'
+import { api } from '../../services/api'
 
 function ExplorePage() {
+  function ocuppation(e){
+    if (e==0){
+      return "Diarista"
+    }
+    else if(e==1){
+      return "Encanador"
+    }
+    else if(e==2){
+      return "Pedreiro"
+    }
+    else{
+      return "Tecnico"
+    }
+  }
 
-    const numbers = [1, 2, 3, 4, 5,6,7,8];
-    const listItems = numbers.map((number) =>
+  function image(e){
+    if (e==0){
+      return Diarista
+    }
+    else if(e==1){
+      return Encanador
+    }
+    else if(e==2){
+      return Pedreiro
+    }
+    else{
+      return serviceTI
+    }
+  }
+
+   const [user, setUser] = useState();
+
+  useEffect(() => {
+    api
+      .get("/provider")
+      .then((response) => setUser(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+  let i=0;
+  const listItems = user?.map((number) =>
         <div>
-        <img src={serviceTI} alt="imagem do servico"></img>
-        <p id="titleService">TITULO</p>
-        <p id="descriptionService">Descricao</p>
+        <img src={image(user[i]?.occupation)} alt=""></img>
+        <p id="titleService"> Nome do prestador: {user[i]?.name}</p>
+        <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
         </div>
     );
+
+//<p>Usuário: {user[0]?.name}</p>
 
   return (
     <S.Container>

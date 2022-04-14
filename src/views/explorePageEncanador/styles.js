@@ -46,10 +46,11 @@ margin-top:100px;
         color: #252B42;
     }
     #title{
+
         margin-top:138px;
         width: 317px;
         height: 32px;
-        
+
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
@@ -101,6 +102,50 @@ margin-top:100px;
     
     
             color: #737373;
+        }
+    }
+    #serviceList{
+        width: 1100px;
+        height: 500px;
+        margin-right:40px;
+        diplay:flex;
+        margin-top:36px;
+        list-style-type: none;
+        li{
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap ;
+        }
+        p{
+            widht:120px;
+            height: 102px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 17px;
+
+            /* or 142% */
+            letter-spacing: 0.2px;
+
+            color: #fff;
+        }
+        img{
+        width: 261px;
+        height: 204px;
+        left:0;
+        }
+        #titleService{
+            position:absolute;
+            margin-top:-160px;
+            margin-left: 20px;
+            p{
+            }
+        }
+        #descriptionService{
+            position:absolute;
+            margin-top:-100px;
+            margin-left: 20px;
         }
     }
     margin-bottom:900px;
