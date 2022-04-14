@@ -1,42 +1,49 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import Select from '../../components/Select/index'
-import { Axios } from 'axios'
+import Select from 'react-select';
+import { useNavigate } from 'react-router-dom'
+import content from './static'
+import { collaboratorRegistration } from '../../services/api'
 
-function UserRegistrationPage() {
-  const url = ''
+function CollaboratorRegistrationPage() {
+
+  let navigate = useNavigate()
+
   const [data, setData] = useState({
     name: '',
     email: '',
     cpf: '',
-    phoneNumber: '',
-    password: ''
+    phone: '',
+    password: '',
+    occupation: '',
   })
 
   function submit(e) {
+    // const back = data;
+    // console.log("back", data) 
     e.preventDefault()
-    Axios.post(url, {
-      name: data.name,
-      email: data.email,
-      cpf: data.cpf,
-      phoneNumber: data.phoneNumber,
-      password: data.password
-    }).then(res => {
-      console.log(res.data)
-    })
+
+    collaboratorRegistration(data.name, data.email, data.cpf, data.phone, data.password, data.occupation)
+    navigate('/login');
   }
 
   function handle(e) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+
+    if (e.value != undefined)
+      newdata["occupation"] = e.value
+    else
+      newdata[e.target.id] = e.target.value
+
     setData(newdata)
     console.log(newdata)
   }
+
 
   return (
     <S.Container>
@@ -48,58 +55,21 @@ function UserRegistrationPage() {
             <p>CADASTRO DE PRESTADOR DE SERVIÇO</p>
           </header>
           <form onSubmit={e => submit(e)}>
-            <Input
-              onChange={e => handle(e)}
-              id="name"
-              value={data.name}
-              placeholder="NOME"
-              type="text"
-              color="red"
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="email"
-              value={data.email}
-              placeholder="EMAIL"
-              type="email"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="cpf"
-              value={data.cpf}
-              placeholder="CPF ou CNPJ"
-              type="number"
-              required
-            />
-            <Input
-              onChange={e => handle(e)}
-              id="phoneNumber"
-              value={data.phoneNumber}
-              placeholder="TELEFONE"
-              type="number"
-              required
-            />
-
-            <Select />
-
-            <Input
-              onChange={e => handle(e)}
-              id="password"
-              value={data.password}
-              placeholder="SENHA"
-              type="password"
-              required
-            />
+            <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" color="red" />
+            <Input onChange={e => handle(e)} id="email" value={data.email} placeholder="EMAIL" type="email" required />
+            <Input onChange={e => handle(e)} id="cpf" value={data.cpf} placeholder="CPF ou CNPJ" type="number" required />
+            <Input onChange={e => handle(e)} id="phone" value={data.phone} placeholder="TELEFONE" type="number" required />
+            <Select onChange={e => handle(e)} id="occupation" value={content.find(obj => obj.value === data)} placeholder="Selecione a Ocupação" options={content} required />
+            <br />
+            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required />
             <Input placeholder="CONFIRMAR SENHA" type="password" required />
-
             <br></br>
             <Button type="submit" title={'CRIAR CONTA'} />
           </form>
           <div id="Linkation">
             <a href="/userRegistrationPage">É um cliente?</a>
             <br></br>
-            <a class="a1" href="/">
+            <a className="a1" href="/">
               Esqueceu a<br></br>senha?
             </a>
           </div>
@@ -110,4 +80,4 @@ function UserRegistrationPage() {
   )
 }
 
-export default UserRegistrationPage
+export default CollaboratorRegistrationPage

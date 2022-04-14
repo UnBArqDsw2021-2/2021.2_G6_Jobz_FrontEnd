@@ -56,6 +56,21 @@ export const ButtonsContainer = styled.div`
     border-color: transparent;
     background-color: transparent;
   }
+
+  #perfilButton {
+    cursor: Pointer;
+    img{
+      height: 40px;
+      
+    }
+  }
+
+  #logOffButton{
+      cursor: Pointer;
+    img{
+      height: 30px;
+    }
+  }
 `
 export const BuscaHeader = styled.div`
   margin-left: 2.56rem;

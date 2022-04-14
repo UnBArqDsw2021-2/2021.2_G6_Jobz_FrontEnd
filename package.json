@@ -16,6 +16,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-select": "^5.2.2",
     "react-user-profile": "^1.0.3",
     "simplebar-react": "^2.3.6",
     "styled-components": "^5.3.3",
@@ -23,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prod": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

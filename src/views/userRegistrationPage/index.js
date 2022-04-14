@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { Axios } from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { userRegistration } from '../../services/api'
 
 function UserRegistrationPage() {
-  const url = ''
+
+  let navigate = useNavigate()
+
   const [data, setData] = useState({
     name: '',
     email: '',
     cpf: '',
-    phoneNumber: '',
+    phone: '',
     password: ''
   })
 
   function submit(e) {
+    //const back = data;
+    //console.log("back", data) verifica se dados chegaram até aqui
     e.preventDefault()
-    Axios.post(url, {
-      name: data.name,
-      email: data.email,
-      cpf: data.cpf,
-      phoneNumber: data.phoneNumber,
-      password: data.password
-    }).then(res => {
-      console.log(res.data)
-    })
+
+    userRegistration(data.name, data.email, data.cpf, data.phone, data.password);
+    navigate('/login');
   }
 
   function handle(e) {
@@ -48,15 +47,14 @@ function UserRegistrationPage() {
           </header>
 
           <form onSubmit={e => submit(e)}>
-            <Input onChange={e => handle(e)} id="name" value={data.name} placeholder="NOME" type="text" required/>
-            <Input onChange={e => handle(e)}id="email"value={data.email}placeholder="EMAIL"type="email"required/>
-            <Input onChange={e => handle(e)} id="cpf" value={data.cpf} placeholder="CPF" type="number" required
-            />
-            <Input onChange={e => handle(e)} id="phoneNumber" value={data.phoneNumber} placeholder="TELEFONE" type="number" required/>
-            <Input onChange={e => handle(e)} id="password" value={data.password} placeholder="SENHA" type="password" required/>
+            <Input onChange={e => handle(e)} id="name" placeholder="NOME" type="text" required />
+            <Input onChange={e => handle(e)} id="email" placeholder="EMAIL" type="email" required />
+            <Input onChange={e => handle(e)} id="cpf" placeholder="CPF" type="number" required />
+            <Input onChange={e => handle(e)} id="phone" placeholder="TELEFONE" type="number" required />
+            <Input onChange={e => handle(e)} id="password" placeholder="SENHA" type="password" required />
             <Input placeholder="CONFIRMAR SENHA" type="password" required />
             <br></br>
-            <Button type="submit" title={'CRIAR CONTA'} />
+            <Button type="submit" title={'CRIAR CONTA'} required />
           </form>
 
           <div id="Linkation">
@@ -65,7 +63,7 @@ function UserRegistrationPage() {
             </a>
 
             <br></br>
-            <a class="a1" href="/">
+            <a className="a1" href="/">
               Esqueceu a<br></br>senha?
             </a>
           </div>

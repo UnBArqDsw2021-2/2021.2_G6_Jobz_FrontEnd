@@ -10,6 +10,7 @@ export const Body = styled.div`
   background-color: #fff;
   align-items: center;
   margin-top: 178px;
+  
   #GroupForm {
     height: 990px;
     flex-direction: column;
@@ -26,7 +27,7 @@ export const Body = styled.div`
       background-color: #f9f9f9;
       height: 61px;
       widht: 114px;
-      margin-left:90px;
+      margin-left:100px;
     }
     p{
       font-family: Montserrat;
@@ -43,12 +44,21 @@ export const Body = styled.div`
      -moz-appearance: textfield;
      appearance: textfield;
   }
+
+
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
     padding: 0 1rem;
     background-color: #f9f9f9;
     justifycontent: 'space-between';
+
     margin-top: 0.3125rem;
 
-    select {
+     select {
       background-color: white;
       border: 1px solid #c7b4b9;
       box-sizing: border-box;
@@ -69,6 +79,19 @@ export const Body = styled.div`
       box-shadow: 0 0 0 0;
       outline: 0;
     }
+
+
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
+    padding: 0 1rem;
+    background-color: #f9f9f9;
+    justifycontent: 'space-between';
+    margin-top: 5px;
+
   }
   #Linkation {
     margin-left: -30px;
