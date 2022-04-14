@@ -41,13 +41,7 @@ function Navbar(props) {
           />
         ) : null}
 
-        {props.home ? <a href="/">Home</a> : null}
-
-        {props.notification ? (
-          <button type="button">
-            <img src={Notification} alt="icon-notification" />
-          </button>
-        ) : null}
+        <Button buttonWidth='180px' path='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor='White' borderRadius="76px" />
       </S.ButtonsContainer>
     </S.Container>
   )

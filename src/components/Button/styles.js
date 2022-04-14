@@ -2,13 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   .button {
-    background-color: ${props =>
-      props.ButtonColor ? props.ButtonColor : 'white'};
-
-    width: ${props => (props.buttonWidth ? props.buttonWidth : '235px')};
-    height: ${props => (props.buttonHeight ? props.buttonHeight : '34px')};
-    border: ${props =>
-      props.borderColor ? props.borderColor : '1px solid #c7b4b9'};
+    background-color: ${props => props.ButtonColor ? props.ButtonColor : 'white'};
+    width: ${props => props.buttonWidth ? props.buttonWidth : '235.77px'};
+    height: 34.77px;
+    border: ${props => props.borderColor ? props.borderColor : '1px solid #c7b4b9'};
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: ${props =>

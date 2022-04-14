@@ -44,6 +44,8 @@ function UserRegistrationPage() {
             />
             <Button path="/" title="Notificações" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
+            <Button path="/myServices" title="Meus serviços" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
+            />
           </sideBar>
         </S.navigationBar>
 

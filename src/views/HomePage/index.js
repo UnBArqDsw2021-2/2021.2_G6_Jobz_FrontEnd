@@ -12,7 +12,7 @@ import Button from '../../components/Button/index'
 function ServicesPage() {
   return (
     <S.Container>
-      <Navbar explore={true} preste={true} login={true} cadastre={true} />
+      <Navbar explore={true} preste={true} login={true}  />
 
       <section
         class="section"
@@ -70,15 +70,11 @@ function ServicesPage() {
           <br />
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
-        <Button
-          path="/userRegistrationPage"
-          title="Cadastre-se"
-          ButtonColor="#39C0A8"
-          borderColor="1px solid #33FFDA"
-          textColor="White"
-          borderRadius="76px"
-          buttonWidth="130px"
-        />
+        <Button buttonWidth='180px' path='/userRegistrationPage' title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor='White' borderRadius='76px' />
+      </section>
+
+      <section id="titleCategories">
+        Categorias populares
       </section>
 
       <section id="titleCategories">Categorias populares</section>
