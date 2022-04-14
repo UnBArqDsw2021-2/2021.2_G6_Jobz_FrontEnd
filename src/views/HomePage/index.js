@@ -49,19 +49,19 @@ function HomePage() {
           </div>
 
           <div className="box">
-            <a href="/serviceTI"><img src={ti} id="ti" alt="imagem tecnico em ti" /></a>
+            <a href="/exploreTI"><img src={ti} id="ti" alt="imagem tecnico em ti" /></a>
             <br></br>
             <span>Assistência em TI</span>
           </div>
 
           <div className="box">
-            <img src={encanador} id="encanador" alt="imagem encanador" />
+            <a href="/explorePlumber"><img src={encanador} id="encanador" alt="imagem encanador" /></a>
             <br></br>
             <span> Encanadores</span>
           </div>
 
           <div className="box">
-            <img src={jardinagem} id="jardinagem" alt="imagem jardineiro" />
+            <a href="/exploreGardener"><img src={jardinagem} id="jardinagem" alt="imagem jardineiro" /></a>
             <br></br>
             <span> Jardineiros</span>
           </div>
