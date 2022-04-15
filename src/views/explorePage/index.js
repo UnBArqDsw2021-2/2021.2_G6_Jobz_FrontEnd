@@ -12,13 +12,13 @@ import { api } from '../../services/api'
 
 function ExplorePage() {
   function ocuppation(e){
-    if (e==0){
+    if (e===0){
       return "Diarista"
     }
-    else if(e==1){
+    else if(e===1){
       return "Encanador"
     }
-    else if(e==2){
+    else if(e===2){
       return "Pedreiro"
     }
     else{
@@ -27,13 +27,13 @@ function ExplorePage() {
   }
 
   function image(e){
-    if (e==0){
+    if (e===0){
       return Diarista
     }
-    else if(e==1){
+    else if(e===1){
       return Encanador
     }
-    else if(e==2){
+    else if(e===2){
       return Pedreiro
     }
     else{
@@ -52,9 +52,10 @@ function ExplorePage() {
       });
   }, []);
   let i=0;
+
   const listItems = user?.map((number) =>
         <div>
-        <img src={image(user[i]?.occupation)} alt=""></img>
+        <img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img>
         <p id="titleService"> Nome do prestador: {user[i]?.name}</p>
         <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
         </div>

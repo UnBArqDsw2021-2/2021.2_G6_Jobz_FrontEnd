@@ -13,13 +13,13 @@ import React, { useEffect, useState } from "react";
 function ExplorePageEncanador() {
 
   function ocuppation(e){
-    if (e==0){
+    if (e===0){
       return "Diarista"
     }
-    else if(e==1){
+    else if(e===1){
       return "Encanador"
     }
-    else if(e==2){
+    else if(e===2){
       return "Pedreiro"
     }
     else{
@@ -28,13 +28,13 @@ function ExplorePageEncanador() {
   }
 
   function image(e){
-    if (e==0){
+    if (e===0){
       return Diarista
     }
-    else if(e==1){
+    else if(e===1){
       return Encanador
     }
-    else if(e==2){
+    else if(e===2){
       return Pedreiro
     }
     else{
@@ -55,12 +55,18 @@ function ExplorePageEncanador() {
   //console.log(user?.length)
   function listItems ()
   {
-        return listItems= user?.map((number)  =>
+        return listItems= user?.map((number)  => 
+        {if(user?.[i++].occupation===1)
+        {
+        return(
         <div>
-        <img src={image(user[i]?.occupation)} alt=""></img>
-        <p id="titleService"> Nome do prestador: {user[i]?.name}</p>
-        <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
-        </div>
+          <img src={image(user[i-1]?.occupation)} alt=""></img>
+          <p id="titleService"> Nome do prestador: {user[i-1]?.name}</p>
+          <p id="descriptionService">Serviço: {ocuppation(user[i-1]?.occupation)}</p>
+        </div>  
+        )
+        }
+        }
         );
   }
 
