@@ -58,14 +58,27 @@ export const Body = styled.div`
         margin-left: 10px;
         position: absolute;
       }
+
+      #errorEmail {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
     }
 
     .password {
       display: flex;
-
+      margin-top: 15px;
       #iconPassword {
         margin-top: 10px;
         margin-left: 10px;
+        position: absolute;
+      }
+      #errorPassword {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
         position: absolute;
       }
     }

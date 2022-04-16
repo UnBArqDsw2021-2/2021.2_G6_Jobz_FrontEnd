@@ -10,7 +10,7 @@ import { AuthContext } from "../../context/auth";
 
 function LoginPage() {
   const { authenticated, login } = useContext(AuthContext);
-
+  const [formErrors, setFormErrors] = useState({});
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -19,16 +19,34 @@ function LoginPage() {
   //validacao aqui pai
   function submit(e) {
     e.preventDefault(); //não faça a ação padrão de atualizar a pagina
+    setFormErrors(validate(data));
+    console.log("formErrors", formErrors);
     const back = data;
-    console.log("back", data);
+    // console.log("back", data);
     login(data.email, data.password); // integracao com contexto e api
   }
+
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+
+    if (!values.email) {
+      errors.email = "Campo email obrigatório";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Email inválido";
+    }
+    if (!values.password) {
+      errors.password = "Campo senha obrigatório";
+    } else if (values.password.length < 6) {
+      errors.password = "Senha deve ter no mínimo 6 caracteres";
+    }
+    return errors;
+  };
 
   function handle(e) {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
-    console.log(newdata);
   }
 
   return (
@@ -39,7 +57,6 @@ function LoginPage() {
           <header>
             <img src={logo} alt="logo" />
           </header>
-
           <form onSubmit={(e) => submit(e)}>
             <p>LOGIN</p>
             <div className="email">
@@ -50,9 +67,10 @@ function LoginPage() {
                 onChange={(e) => handle(e)}
                 id="email"
                 placeholder="EMAIL"
-                type="email"
-                required
+                // type="email"
+                // required
               />
+              <p id="errorEmail">{formErrors.email}</p>
             </div>
 
             <div className="password">
@@ -65,8 +83,9 @@ function LoginPage() {
                 value={data.password}
                 placeholder="SENHA"
                 type="password"
-                required
+                // required
               />
+              <p id="errorPassword">{formErrors.password}</p>
             </div>
             <br></br>
             <Button type="submit" title={"LOGIN"} required />
