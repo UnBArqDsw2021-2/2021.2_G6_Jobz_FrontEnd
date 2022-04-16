@@ -3,6 +3,8 @@ import CollaboratorRegistrationPage from '../views/collaboratorRegistrationPage/
 import HomePage from '../views/HomePage/index'
 import LoginPage from '../views/loginPage/index'
 import ExplorePage from '../views/explore/explorePage/index'
+import ExplorePageDiarista from '../views/explore/explorePageDiarista/index'
+import ExplorePagePedreiro from '../views/explore/explorePagePedreiro/index'
 import ExplorePageTI from '../views/explore/explorePageTI/index'
 import ExplorePageEncanador from '../views/explore/explorePageEncanador/index'
 import ExplorePageJardineiro from '../views/explore/explorePageJardineiro/index'
@@ -25,6 +27,8 @@ function Directions() {
           <Route path="/exploreTI" element={<ExplorePageTI />} /> 
           <Route path="/explorePlumber" element={<ExplorePageEncanador />} /> 
           <Route path="/exploreGardener" element={<ExplorePageJardineiro />} /> 
+          <Route path="/exploreDayLabore" element={<ExplorePageDiarista />} />
+          <Route path="/exploreBricklayer" element={<ExplorePagePedreiro />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

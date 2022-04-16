@@ -12,65 +12,65 @@ import Select from 'react-select';
 import { api } from '../../../services/api'
 
 
-function ExplorePageEncanador() {
-  const content =  [
-    {
-        value: 1,
-        label: <Button
-        path="/exploreDayLabore"
-        title="Diarista"
-        ButtonColor="transparent"
-        borderColor="white"
-        textColor="black"
-        borderRadius="0px"
-        buttonWidth="100%"
-        buttonHeight="110%"
-        boxShadow="0px"
-      />
-    },
-    {
-        value: 2,
-        label: <Button
-        path="/explorePlumber"
-        title="Encanador"
-        ButtonColor="transparent"
-        borderColor="white"
-        textColor="black"
-        borderRadius="0px"
-        buttonWidth="100%"
-        buttonHeight="110%"
-        boxShadow="0px"
-      />
-    },
-    {
-        value: 3,
-        label: <Button
-        path="/exploreBricklayer"
-        title="Pedreiro"
-        ButtonColor="transparent"
-        borderColor="white"
-        textColor="black"
-        borderRadius="0px"
-        buttonWidth="100%"
-        buttonHeight="110%"
-        boxShadow="0px"
-      />
-    },
-    {
-        value: 4,
-        label: <Button
-        path="/exploreTI"
-        title="Tecnico"
-        ButtonColor="transparent"
-        borderColor="white"
-        textColor="black"
-        borderRadius="0px"
-        buttonWidth="100%"
-        buttonHeight="110%"
-        boxShadow="0px"
-      />
-    }
-]
+function ExplorePageDiarista() {
+    const content =  [
+        {
+            value: 1,
+            label: <Button
+            path="/exploreDayLabore"
+            title="Diarista"
+            ButtonColor="transparent"
+            borderColor="white"
+            textColor="black"
+            borderRadius="0px"
+            buttonWidth="100%"
+            buttonHeight="110%"
+            boxShadow="0px"
+          />
+        },
+        {
+            value: 2,
+            label: <Button
+            path="/explorePlumber"
+            title="Encanador"
+            ButtonColor="transparent"
+            borderColor="white"
+            textColor="black"
+            borderRadius="0px"
+            buttonWidth="100%"
+            buttonHeight="110%"
+            boxShadow="0px"
+          />
+        },
+        {
+            value: 3,
+            label: <Button
+            path="/exploreBricklayer"
+            title="Pedreiro"
+            ButtonColor="transparent"
+            borderColor="white"
+            textColor="black"
+            borderRadius="0px"
+            buttonWidth="100%"
+            buttonHeight="110%"
+            boxShadow="0px"
+          />
+        },
+        {
+            value: 4,
+            label: <Button
+            path="/exploreTI"
+            title="Tecnico"
+            ButtonColor="transparent"
+            borderColor="white"
+            textColor="black"
+            borderRadius="0px"
+            buttonWidth="100%"
+            buttonHeight="110%"
+            boxShadow="0px"
+          />
+        }
+    ]
     function ocuppation(e){
       if (e===1){
         return "Diarista"
@@ -116,7 +116,7 @@ function ExplorePageEncanador() {
   function listItems ()
   {
         return listItems= user?.map((number)  => 
-        {if(user?.[i++].occupation===2)
+        {if(user?.[i++].occupation===1)
         {
         return(
         <div>
@@ -139,10 +139,10 @@ function ExplorePageEncanador() {
                 <div id="link">
                     <a href="/">Home</a>
                     <img src={sinal} alt="sinal maior"></img>
-                    <p id="service">Serviços de encanadores</p>
+                    <p id="service">Serviços de diaristas</p>
                 </div>
-                <p id="title">Serviços de Encanadores</p>
-                <p id="description">Aqui você pode encontrar os melhores encanadores.</p>
+                <p id="title">Serviços de Diaristas</p>
+                <p id="description">Aqui você pode encontrar as melhores diaristas.</p>
                 <div id="order-by">
                     <p id="order">Ordernar por:</p>
                     <Select id="occupation" placeholder="Selecione a Ocupação" options={content} required />
@@ -161,4 +161,4 @@ function ExplorePageEncanador() {
   )
 }
 
-export default ExplorePageEncanador
+export default ExplorePageDiarista

@@ -3,14 +3,74 @@ import React, { useEffect, useState } from "react";
 import Navbar from '../../../components/Navbar/navbar'
 import Footer from '../../../components/Footer/footer'
 import sinal from '../../../assets/sinal.svg'
-import Button from '../../../components/Button'
+import Select from 'react-select';
 import serviceTI from '../../../assets/TiExample.png'
 import Diarista from '../../../assets/DiaristaExample.png'
 import Encanador from '../../../assets/EncadorExample.png'
 import Pedreiro from '../../../assets/Pedreiro.png'
+import Button from '../../../components/Button/index'
 import { api } from '../../../services/api'
 
 function ExplorePage() {
+  const content =  [
+    {
+        value: 1,
+        label: <Button
+        path="/exploreDayLabore"
+        title="Diarista"
+        ButtonColor="transparent"
+        borderColor="white"
+        textColor="black"
+        borderRadius="0px"
+        buttonWidth="100%"
+        buttonHeight="110%"
+        boxShadow="0px"
+      />
+    },
+    {
+        value: 2,
+        label: <Button
+        path="/explorePlumber"
+        title="Encanador"
+        ButtonColor="transparent"
+        borderColor="white"
+        textColor="black"
+        borderRadius="0px"
+        buttonWidth="100%"
+        buttonHeight="110%"
+        boxShadow="0px"
+      />
+    },
+    {
+        value: 3,
+        label: <Button
+        path="/exploreBricklayer"
+        title="Pedreiro"
+        ButtonColor="transparent"
+        borderColor="white"
+        textColor="black"
+        borderRadius="0px"
+        buttonWidth="100%"
+        buttonHeight="110%"
+        boxShadow="0px"
+      />
+    },
+    {
+        value: 4,
+        label: <Button
+        path="/exploreTI"
+        title="Tecnico"
+        ButtonColor="transparent"
+        borderColor="white"
+        textColor="black"
+        borderRadius="0px"
+        buttonWidth="100%"
+        buttonHeight="110%"
+        boxShadow="0px"
+      />
+    }
+]
+
   function ocuppation(e){
     if (e===1){
       return "Diarista"
@@ -21,7 +81,7 @@ function ExplorePage() {
     else if(e===3){
       return "Pedreiro"
     }
-    else if (e==4){
+    else if (e===4){
       return "Tecnico"
     }
   }
@@ -36,12 +96,12 @@ function ExplorePage() {
     else if(e===3){
       return Pedreiro
     }
-    else if (e==4){
+    else if (e===4){
       return serviceTI
     }
   }
 
-   const [user, setUser] = useState();
+  const [user, setUser] = useState();
 
   useEffect(() => {
     api
@@ -78,16 +138,7 @@ function ExplorePage() {
                 <p id="description">Aqui você encontra todos os serviços cadastrados por nossos prestadores.</p>
                 <div id="order-by">
                     <p id="order">Ordernar por:</p>
-                    <Button
-                        path=""
-                        title="Categoria"
-                        ButtonColor="#F9F9F9"
-                        borderColor="1px solid #E6E6E6"
-                        textColor="#252B42"
-                        borderRadius="0px"
-                        buttonWidth="155px"
-                        buttonHeight="58px"
-                    />
+                    <Select id="occupation" placeholder="Selecione a Ocupação" options={content} required />
                 </div>
                 <div id="serviceList">
                     <li>
@@ -98,7 +149,6 @@ function ExplorePage() {
         </div>
       </S.Body>     
       <Footer />
-      this.percorre()
     </S.Container>
   )
 }
