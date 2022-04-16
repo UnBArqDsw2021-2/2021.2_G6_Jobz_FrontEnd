@@ -17,7 +17,7 @@ export const Body = styled.div`
     display: flex;
     align-items: center;
     width: 643px;
-    height: 538px;
+    height: 643px;
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
@@ -52,41 +52,99 @@ export const Body = styled.div`
         margin-top: 10px;
         margin-left: 10px;
       }
+
+      #errorName {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
     }
 
     .email {
+      margin-top: 14px;
       display: flex;
       #iconeEmail {
         position: absolute;
         margin-top: 10px;
         margin-left: 10px;
       }
+      #errorEmail {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
     }
 
     .cpf {
       display: flex;
+      margin-top: 14px;
       #iconeCpf {
         position: absolute;
         margin-top: 10px;
         margin-left: 10px;
       }
+      #errorCpf {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
     }
 
     .phone {
+      margin-top: 14px;
       display: flex;
       #iconePhone {
         position: absolute;
         margin-top: 10px;
         margin-left: 10px;
       }
+      #errorPhone {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
     }
 
     .password {
+      margin-top: 14px;
       display: flex;
       #iconePassword {
         position: absolute;
         margin-top: 10px;
         margin-left: 10px;
+      }
+      #errorPassword {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
+    }
+
+    .confirmPassword {
+      margin-top: 14px;
+      display: flex;
+      #iconePassword {
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      #errorConfirmPassword {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
+
+      #correctPassword {
+        margin-top: 40px;
+        font-size: 12px;
+        color: green;
+        position: absolute;
       }
     }
 
