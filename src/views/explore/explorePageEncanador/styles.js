@@ -48,7 +48,7 @@ margin-top:100px;
     #title{
 
         margin-top:138px;
-        width: 225px;
+        width: 317px;
         height: 32px;
 
         font-family: 'Montserrat';

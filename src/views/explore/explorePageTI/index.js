@@ -11,7 +11,7 @@ import Pedreiro from '../../../assets/Pedreiro.png'
 import Select from 'react-select';
 import { api } from '../../../services/api'
 
-function ExploreRegistrationPage() {
+function ExplorePageTI() {
   const content =  [
     {
         value: 1,
@@ -23,7 +23,7 @@ function ExploreRegistrationPage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -37,7 +37,7 @@ function ExploreRegistrationPage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -51,7 +51,7 @@ function ExploreRegistrationPage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -65,7 +65,7 @@ function ExploreRegistrationPage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     }
@@ -158,4 +158,4 @@ function ExploreRegistrationPage() {
   )
 }
 
-export default ExploreRegistrationPage
+export default ExplorePageTI

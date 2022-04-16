@@ -23,7 +23,7 @@ function ExplorePage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -37,7 +37,7 @@ function ExplorePage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -51,7 +51,7 @@ function ExplorePage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     },
@@ -65,7 +65,7 @@ function ExplorePage() {
         textColor="black"
         borderRadius="0px"
         buttonWidth="100%"
-        buttonHeight="110%"
+        buttonHeight="100%"
         boxShadow="0px"
       />
     }
