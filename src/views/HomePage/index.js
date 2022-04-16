@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as S from './styles'
 import procura from '../../assets/procura.svg'
 import background from '../../assets/service.png'
@@ -8,12 +8,15 @@ import encanador from '../../assets/Encanador.png'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import Button from '../../components/Button/index'
+import { AuthContext } from '../../context/auth'
 
 function HomePage() {
 
+  const { authenticated } = useContext(AuthContext);
+
   return (
     <S.Container>
-      <Navbar explore={true} preste={true} login={true} cadastre={true} />
+      <Navbar />
 
       <section
         className="section"
@@ -71,8 +74,20 @@ function HomePage() {
           <br />
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
-        <Button path="/userRegistrationPage" title="Cadastre-se" ButtonColor="#39C0A8" borderColor="1px solid #33FFDA" textColor="White" borderRadius="76px" buttonWidth="130px"
-        /> 
+
+
+        {!localStorage.getItem("loggedUser") ? (
+          <Button
+            path="/userRegistrationPage"
+            title="Cadastre-se"
+            ButtonColor="#39C0A8"
+            borderColor="1px solid #33FFDA"
+            textColor="White"
+            borderRadius="76px"
+            buttonWidth="130px"
+          />
+        ) : null}
+
       </section>
 
       <section id="titleCategories">Categorias populares</section>

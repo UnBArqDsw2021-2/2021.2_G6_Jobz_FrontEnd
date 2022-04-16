@@ -7,6 +7,17 @@ import hireImage from "../../assets/hireButtonImage.png";
 import Button from "../../components/Button";
 
 function collaboratorContactPage() {
+
+  function getUser() {
+    console.log("Entrou no getNew USer")
+    axios.get(url)
+      .then(response => { //se der tudo certo entra aqui
+        console.log(response)
+        const data = response.data
+      })
+      .catch(error => console.log(error)) // se der ruim entra aqui
+  }
+  
   return (
     <S.Container>
       <Navbar explore={true} login={true} preste={true} cadastre={true} />
