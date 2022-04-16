@@ -1,46 +1,47 @@
 import * as S from './styles'
-import Navbar from '../../components/Navbar/navbar'
-import Footer from '../../components/Footer/footer'
-import sinal from '../../assets/sinal.svg'
-import Button from '../../components/Button'
-import serviceTI from '../../assets/TiExample.png'
-import Diarista from '../../assets/Diarista.png'
-import Encanador from '../../assets/Encanador.png'
-import Pedreiro from '../../assets/pedreiro.png'
-import { api } from '../../services/api'
 import React, { useEffect, useState } from "react";
+import Navbar from '../../../components/Navbar/navbar'
+import Footer from '../../../components/Footer/footer'
+import sinal from '../../../assets/sinal.svg'
+import Button from '../../../components/Button'
+import serviceTI from '../../../assets/TiExample.png'
+import Diarista from '../../../assets/DiaristaExample.png'
+import Encanador from '../../../assets/EncadorExample.png'
+import Pedreiro from '../../../assets/Pedreiro.png'
+import { api } from '../../../services/api'
 
 
-function ExploreRegistrationPage() {
-  function ocuppation(e){
-    if (e===0){
-      return "Diarista"
+function ExplorePageEncanador() {
+    function ocuppation(e){
+      if (e===1){
+        return "Diarista"
+      }
+      else if(e===2){
+        return "Encanador"
+      }
+      else if(e===3){
+        return "Pedreiro"
+      }
+      else if (e==4){
+        return "Tecnico"
+      }
     }
-    else if(e===1){
-      return "Encanador"
+  
+    function image(e){
+      if (e===1){
+        return Diarista
+      }
+      else if(e===2){
+        return Encanador
+      }
+      else if(e===3){
+        return Pedreiro
+      }
+      else if (e==4){
+        return serviceTI
+      }
     }
-    else if(e===2){
-      return "Pedreiro"
-    }
-    else{
-      return "Tecnico"
-    }
-  }
-
-  function image(e){
-    if (e===0){
-      return Diarista
-    }
-    else if(e===1){
-      return Encanador
-    }
-    else if(e===2){
-      return Pedreiro
-    }
-    else{
-      return serviceTI
-    }
-  }
+  
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -56,12 +57,12 @@ function ExploreRegistrationPage() {
   function listItems ()
   {
         return listItems= user?.map((number)  => 
-        {if(user?.[i++].occupation===3)
+        {if(user?.[i++].occupation===2)
         {
         return(
         <div>
           <img src={image(user[i-1]?.occupation)} alt=""></img>
-          <p id="titleService"> Nome do prestador: {user[i-1]?.name}</p>
+          <p id="titleService"> Prestador: {user[i-1]?.name}</p>
           <p id="descriptionService">Serviço: {ocuppation(user[i-1]?.occupation)}</p>
         </div>  
         )
@@ -79,10 +80,10 @@ function ExploreRegistrationPage() {
                 <div id="link">
                     <a href="/">Home</a>
                     <img src={sinal} alt="sinal maior"></img>
-                    <p id="service">Serviços de TI</p>
+                    <p id="service">Serviços de encanadores</p>
                 </div>
-                <p id="title">Serviços de TI</p>
-                <p id="description">Aqui você pode encontrar os melhores jardineiros.</p>
+                <p id="title">Serviços de Encanadores</p>
+                <p id="description">Aqui você pode encontrar os melhores encanadores.</p>
                 <div id="order-by">
                     <p id="order">Ordernar por:</p>
                     <Button
@@ -103,10 +104,11 @@ function ExploreRegistrationPage() {
                 </div>
             </header>
         </div>
+
       </S.Body>     
       <Footer />
     </S.Container>
   )
 }
 
-export default ExploreRegistrationPage
+export default ExplorePageEncanador

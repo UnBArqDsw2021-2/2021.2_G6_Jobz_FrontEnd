@@ -26,7 +26,7 @@ function UserRegistrationPage() {
     e.preventDefault()
 
     userRegistration(data.name, data.email, data.cpf, data.phone, data.password);
-    navigate('/login');
+    //navigate('/login');
   }
 
   function handle(e) {

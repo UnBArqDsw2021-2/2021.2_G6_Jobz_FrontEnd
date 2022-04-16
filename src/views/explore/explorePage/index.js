@@ -1,42 +1,42 @@
 import * as S from './styles'
 import React, { useEffect, useState } from "react";
-import Navbar from '../../components/Navbar/navbar'
-import Footer from '../../components/Footer/footer'
-import sinal from '../../assets/sinal.svg'
-import Button from '../../components/Button'
-import serviceTI from '../../assets/TiExample.png'
-import Diarista from '../../assets/Diarista.png'
-import Encanador from '../../assets/Encanador.png'
-import Pedreiro from '../../assets/pedreiro.png'
-import { api } from '../../services/api'
+import Navbar from '../../../components/Navbar/navbar'
+import Footer from '../../../components/Footer/footer'
+import sinal from '../../../assets/sinal.svg'
+import Button from '../../../components/Button'
+import serviceTI from '../../../assets/TiExample.png'
+import Diarista from '../../../assets/DiaristaExample.png'
+import Encanador from '../../../assets/EncadorExample.png'
+import Pedreiro from '../../../assets/Pedreiro.png'
+import { api } from '../../../services/api'
 
 function ExplorePage() {
   function ocuppation(e){
-    if (e===0){
+    if (e===1){
       return "Diarista"
     }
-    else if(e===1){
+    else if(e===2){
       return "Encanador"
     }
-    else if(e===2){
+    else if(e===3){
       return "Pedreiro"
     }
-    else{
+    else if (e==4){
       return "Tecnico"
     }
   }
 
   function image(e){
-    if (e===0){
+    if (e===1){
       return Diarista
     }
-    else if(e===1){
+    else if(e===2){
       return Encanador
     }
-    else if(e===2){
+    else if(e===3){
       return Pedreiro
     }
-    else{
+    else if (e==4){
       return serviceTI
     }
   }
@@ -56,7 +56,7 @@ function ExplorePage() {
   const listItems = user?.map((number) =>
         <div>
         <img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img>
-        <p id="titleService"> Nome do prestador: {user[i]?.name}</p>
+        <p id="titleService"> Prestador: {user[i]?.name}</p>
         <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
         </div>
     );

@@ -1,42 +1,42 @@
 import * as S from './styles'
-import Navbar from '../../components/Navbar/navbar'
-import Footer from '../../components/Footer/footer'
-import sinal from '../../assets/sinal.svg'
-import Button from '../../components/Button'
-import serviceTI from '../../assets/TiExample.png'
-import Diarista from '../../assets/Diarista.png'
-import Encanador from '../../assets/Encanador.png'
-import Pedreiro from '../../assets/pedreiro.png'
-import { api } from '../../services/api'
 import React, { useEffect, useState } from "react";
+import Navbar from '../../../components/Navbar/navbar'
+import Footer from '../../../components/Footer/footer'
+import sinal from '../../../assets/sinal.svg'
+import Button from '../../../components/Button'
+import serviceTI from '../../../assets/TiExample.png'
+import Diarista from '../../../assets/DiaristaExample.png'
+import Encanador from '../../../assets/EncadorExample.png'
+import Pedreiro from '../../../assets/Pedreiro.png'
+import { api } from '../../../services/api'
 
-function ExplorePageJardineiro() {
+function ExploreRegistrationPage() {
   function ocuppation(e){
-    if (e===0){
+    if (e===1){
       return "Diarista"
     }
-    else if(e===1){
+    else if(e===2){
       return "Encanador"
     }
-    else if(e===2){
+    else if(e===3){
       return "Pedreiro"
     }
-    else{
+    else if (e==4){
       return "Tecnico"
     }
   }
 
   function image(e){
-    if (e===0){
+    if (e===1){
       return Diarista
     }
-    else if(e===1){
+    else if(e===2){
       return Encanador
     }
-    else if(e===2){
+    else if(e===3){
       return Pedreiro
     }
-    else{
+    else if (e==4){
       return serviceTI
     }
   }
@@ -55,12 +55,12 @@ function ExplorePageJardineiro() {
   function listItems ()
   {
         return listItems= user?.map((number)  => 
-        {if(user?.[i++].occupation===0)
+        {if(user?.[i++].occupation===4)
         {
         return(
         <div>
           <img src={image(user[i-1]?.occupation)} alt=""></img>
-          <p id="titleService"> Nome do prestador: {user[i-1]?.name}</p>
+          <p id="titleService"> Prestador: {user[i-1]?.name}</p>
           <p id="descriptionService">Serviço: {ocuppation(user[i-1]?.occupation)}</p>
         </div>  
         )
@@ -68,7 +68,6 @@ function ExplorePageJardineiro() {
         }
         );
   }
-
 
   return (
     <S.Container>
@@ -79,9 +78,9 @@ function ExplorePageJardineiro() {
                 <div id="link">
                     <a href="/">Home</a>
                     <img src={sinal} alt="sinal maior"></img>
-                    <p id="service">Serviços de Jardinagem</p>
+                    <p id="service">Serviços de TI</p>
                 </div>
-                <p id="title">Serviços de Jardinagem</p>
+                <p id="title">Serviços de TI</p>
                 <p id="description">Aqui você pode encontrar os melhores jardineiros.</p>
                 <div id="order-by">
                     <p id="order">Ordernar por:</p>
@@ -109,4 +108,4 @@ function ExplorePageJardineiro() {
   )
 }
 
-export default ExplorePageJardineiro
+export default ExploreRegistrationPage

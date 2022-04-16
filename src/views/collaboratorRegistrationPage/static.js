@@ -1,11 +1,11 @@
 const content =  [
         {
             value: 1,
-            label: 'Encanador'
+            label: 'Diarista'
         },
         {
             value: 2,
-            label: 'Diarista'
+            label: 'Encanador'
         },
         {
             value: 3,

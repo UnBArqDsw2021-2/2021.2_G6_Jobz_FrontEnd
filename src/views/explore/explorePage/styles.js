@@ -117,15 +117,15 @@ margin-top:100px;
             flex-wrap: wrap ;
         }
         p{
+            
             widht:120px;
             height: 102px;
             font-family: 'Montserrat';
             font-style: normal;
-            font-weight: 500;
+            font-weight: bold;
+            text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
             font-size: 15px;
             line-height: 17px;
-
-            /* or 142% */
             letter-spacing: 0.2px;
 
             color: #fff;
