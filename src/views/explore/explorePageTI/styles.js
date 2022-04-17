@@ -111,6 +111,14 @@ margin-top:100px;
         diplay:flex;
         margin-top:36px;
         list-style-type: none;
+        
+        .imagesButton{
+            cursor: pointer;
+            &:not(:disabled):hover {
+                filter: brightness(0.9);
+                background-color: #33FFDA;
+            }   
+        }
         li{
             display:flex;
             justify-content: space-around;
@@ -119,7 +127,6 @@ margin-top:100px;
         p{
             
             widht:120px;
-            height: 102px;
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: bold;

@@ -115,7 +115,7 @@ function ExplorePage() {
 
   const listItems = user?.map((number) =>
         <div>
-        <img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img>
+        <button className="imagesButton"><img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img></button>        
         <p id="titleService"> Prestador: {user[i]?.name}</p>
         <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
         </div>

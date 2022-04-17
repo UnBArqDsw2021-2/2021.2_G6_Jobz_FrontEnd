@@ -120,7 +120,7 @@ function ExplorePagePedreiro() {
         {
         return(
         <div>
-          <img src={image(user[i-1]?.occupation)} alt=""></img>
+          <button className="imagesButton"><img src={image(user[i-1]?.occupation)} alt="Imagem da ocupacao"></img></button>        
           <p id="titleService"> Prestador: {user[i-1]?.name}</p>
           <p id="descriptionService">Serviço: {ocuppation(user[i-1]?.occupation)}</p>
         </div>  
