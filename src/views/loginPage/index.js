@@ -21,14 +21,16 @@ function LoginPage() {
     e.preventDefault(); //não faça a ação padrão de atualizar a pagina
     setFormErrors(validate(data));
     console.log("formErrors", formErrors);
-    const back = data;
+    // const back = data;
     // console.log("back", data);
-    login(data.email, data.password); // integracao com contexto e api
+    const response = login(data.email, data.password); // integracao com contexto e api
+    console.log("response login", response);
   }
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+    const regex = /^[a-zA-Z0-9]{3,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+    const regexPassword = /^[a-zA-Z0-9+\-*\^´\+_)(*\&!@#]{8,30}$/;
 
     if (!values.email) {
       errors.email = "Campo email obrigatório";
@@ -37,8 +39,8 @@ function LoginPage() {
     }
     if (!values.password) {
       errors.password = "Campo senha obrigatório";
-    } else if (values.password.length < 6) {
-      errors.password = "Senha deve ter no mínimo 6 caracteres";
+    } else if (!regexPassword.test(values.password)) {
+      errors.password = "Senha incorreta";
     }
     return errors;
   };
