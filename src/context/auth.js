@@ -25,25 +25,16 @@ export const AuthProvider = ({ children }) => {
 
         console.log("login", response.data);
         
-        //console.log("email:"+email+" password:"+password); // printa email e senha
-
-        //parece não ter token
-        // não esta passando um user
         const loggedUser = email; // recebemos email do usuario
 
-
-        //const token = response.data.token; // recebemos o token
         const refresh = response.data.refresh;
         const access = response.data.access;
 
-        //console.log("token:" +token);
         console.log("loggedUser:" + loggedUser);
         console.log("refresh:" + refresh);
         console.log("access:" + access);
 
         //guarda em localStorage
-       //localStorage.setItem("user", JSON.stringify(loggedUser)); // nao tem user
-        //localStorage.setItem('token',token); // nao tem token
         localStorage.setItem('refresh', refresh);
         localStorage.setItem('access', access);
         localStorage.setItem('loggedUser', loggedUser)
@@ -57,9 +48,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        console.log("logout!");
-        //localStorage.removeItem("user"); // nao tem user
-        //localStorage.removeItem("token");
+       // console.log("logout!");
         localStorage.removeItem("refresh");
         localStorage.removeItem("access");
         localStorage.removeItem("loggedUser");
