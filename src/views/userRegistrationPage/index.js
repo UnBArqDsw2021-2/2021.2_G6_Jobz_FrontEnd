@@ -18,6 +18,7 @@ import { userRegistration } from "../../services/api";
 function UserRegistrationPage() {
   let navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
+  let submitState = true;
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -27,13 +28,12 @@ function UserRegistrationPage() {
   });
 
   function submit(e) {
-    // const back = data;
-    //add string to back
-    // console.log("back", data); //verifica se dados chegaram até aqui
     e.preventDefault();
     console.log("data", data);
     setFormErrors(validate(data));
+
     console.log("formErrors", formErrors);
+
     userRegistration(
       data.name,
       data.email,
@@ -41,53 +41,65 @@ function UserRegistrationPage() {
       data.phone,
       data.password
     );
-    console.log("eai");
-    if (formErrors.length == 0) {
+
+    if (submitState) {
       navigate("/login");
     }
   }
 
   const validate = (values) => {
     const errors = {};
-    const regexEmail = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-    const regexCpf = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+    const regexEmail =
+      /^[a-zA-Z0-9]{3,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+    const regexCpf = /^\d{11}$/;
     const regexPhone = /^\d{11}$/;
+    const regexPassword = /^[a-zA-Z0-9+\-*\^´\+_)(*\&!@#]{8,30}$/;
     let confirmPassword = document.getElementById("confirmPassword").value;
-    console.log("password", confirmPassword);
+
     if (!values.name) {
       errors.name = "Campo nome obrigatório";
+      submitState = false;
     } else if (values.name.length < 3) {
       errors.name = "Nome deve ter no mínimo 3 caracteres";
+      submitState = false;
     }
-
     if (!values.email) {
       errors.email = "Campo email obrigatório";
+      submitState = false;
     } else if (!regexEmail.test(values.email)) {
+      submitState = false;
       errors.email = "Email inválido";
     }
 
     if (!values.cpf) {
+      submitState = false;
       errors.cpf = "Campo cpf obrigatório";
     } else if (!regexCpf.test(values.cpf)) {
+      submitState = false;
       errors.cpf = "CPF inválido";
     }
 
     if (!values.phone) {
+      submitState = false;
       errors.phone = "Campo telefone obrigatório";
     } else if (!regexPhone.test(values.phone)) {
+      submitState = false;
       errors.phone = "Telefone inválido";
     }
 
     if (!values.password) {
+      submitState = false;
       errors.password = "Campo senha obrigatório";
-    } else if (values.password.length < 6) {
-      errors.password = "Senha deve ter no mínimo 6 caracteres";
+    } else if (!regexPassword.test(values.password)) {
+      submitState = false;
+      errors.password = "Senha inválida (8 a 30 caracteres)";
     }
 
     if (!confirmPassword) {
-      // console.log("entrou", values.confirmPassword);
+      submitState = false;
       errors.confirmPassword = "Campo confirmar senha obrigatório";
     } else if (confirmPassword !== values.password) {
+      submitState = false;
       errors.confirmPassword = "Senhas não conferem";
     }
 
@@ -95,7 +107,6 @@ function UserRegistrationPage() {
   };
 
   function handle(e) {
-    // console.log("e", e.target.value);
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
@@ -213,14 +224,8 @@ function UserRegistrationPage() {
             </div>
 
             <br></br>
-            {/* disenable button if formErros.length > 0  */}
 
-            <Button
-              type="submit"
-              title={"CRIAR CONTA"}
-              // disabled={formErrors.length > 0}
-              required
-            />
+            <Button type="submit" title={"CRIAR CONTA"} required />
           </form>
 
           <div id="Linkation">

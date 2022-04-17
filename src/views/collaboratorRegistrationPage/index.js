@@ -43,6 +43,8 @@ function CollaboratorRegistrationPage() {
       data.password,
       data.occupation
     );
+
+    console.log("formErrors tamanho", formErrors.length);
     if (formErrors.length == 0) {
       navigate("/login");
     }
@@ -50,11 +52,14 @@ function CollaboratorRegistrationPage() {
 
   const validate = (values) => {
     const errors = {};
-    const regexEmail = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-    const regexCpf = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+    const regexEmail =
+      /^[a-zA-Z0-9]{3,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+    const regexCpf = /^\d{11}$/;
     const regexPhone = /^\d{11}$/;
+    const regexPassword = /^[a-zA-Z0-9+\-*\^´\+_)(*\&!@#]{8,30}$/;
+
     let confirmPassword = document.getElementById("confirmPassword").value;
-    console.log("password", confirmPassword);
+    // console.log("password", confirmPassword);
     if (!values.name) {
       errors.name = "Campo nome obrigatório";
     } else if (values.name.length < 3) {
@@ -85,8 +90,8 @@ function CollaboratorRegistrationPage() {
 
     if (!values.password) {
       errors.password = "Campo senha obrigatório";
-    } else if (values.password.length < 6) {
-      errors.password = "Senha deve ter no mínimo 6 caracteres";
+    } else if (regexPassword.test(values.password)) {
+      errors.password = "Senha inválida (8 a 30 caracteres)";
     }
 
     if (!confirmPassword) {
