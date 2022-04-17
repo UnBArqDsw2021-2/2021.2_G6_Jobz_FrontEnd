@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     let navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const recoveredUser = localStorage.getItem('user');
@@ -18,7 +17,6 @@ export const AuthProvider = ({ children }) => {
             setUser(JSON.parse(recoveredUser));
         }
 
-        setLoading(false);
     }, []); // função que quero executar quando inicializar e o array de monitoramento
 
     const login = async (email, password) => {
@@ -73,7 +71,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider
-            value={{ authenticated: !!user, user, loading, login, logout }}>
+            value={{ authenticated: !!user, user, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

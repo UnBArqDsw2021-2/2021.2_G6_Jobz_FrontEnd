@@ -1,69 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import * as S from "./styles";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import user from "../../assets/usuario.png";
 import hireImage from "../../assets/hireButtonImage.png";
-import Button from "../../components/Button";
+import api from '../../services/api'
 
-function collaboratorContactPage() {
+function CollaboratorContactPage() {
 
-  function getUser() {
-    console.log("Entrou no getNew USer")
-    axios.get(url)
-      .then(response => { //se der tudo certo entra aqui
-        console.log(response)
-        const data = response.data
-      })
-      .catch(error => console.log(error)) // se der ruim entra aqui
+  const [contactInfo, setContactInfo] = useState();
+  const [cpf, setCpf] = useState();
+  const [providers, setProviders] = useState([]);
+  var occupation;
+  var provider = [];
+
+  useEffect(() => {
+    async function contactProvider() {
+      const request = await api.get("/providerPresentation/")
+        .then(request =>
+          setContactInfo(request.data[1],
+            setCpf(request.data[1].provider)))
+        .catch(error => console.log(error))
+
+      return request;
+    }
+
+    async function fetchProviders() {
+      const request = await api.get("/provider/")
+        .then(request => setProviders(request.data))
+        .catch(error => console.log(error))
+    }
+
+    fetchProviders();
+    contactProvider();
+  }, []); //só vai executar uma vez
+
+
+  // faz um loop por todos os providers, porem se o provider tiver o cpf igual a cpf então printa
+  providers.map((prov) => {
+    if (prov.cpf === cpf) {
+      provider = prov;
+    }
+  })
+
+  if (provider.occupation == 1) {
+    occupation = "Encanador";
+  } else if (provider.occupation == 2) {
+    occupation = "Diarista";
+  } else if (provider.occupation == 3) {
+    occupation = "Pedreiro";
+  } else if (provider.occupation == 4) {
+    occupation = "Técnico";
   }
-  
+
   return (
     <S.Container>
-      <Navbar explore={true} login={true} preste={true} cadastre={true} />
-
-      <h1>Nome do Usuário</h1>
+      <Navbar />
+      <h1>{provider.name}</h1>
 
       <S.body>
         <S.LeftSide>
           <S.description>
             <h3>Informações sobre o serviço</h3>
 
-            <info>
-              Lorem ipsum dolor sit amet. Est corporis ipsa ut ratione quia ea
-              praesentium galisum qui recusandae nobis et exercitationem beatae.
-              Sit perferendis rerum aut odit veniam est consequuntur quia est
-              facere dolores est quas animi ut quia dolores et omnis sunt? Cum
-              voluptas distinctio quo asperiores maiores ut culpa eaque At
-              doloremque sapiente aut minus magni ad error beatae. Sit molestiae
-              nesciunt et quae dolor in quas maiores aut veniam nobis. Eos
-              reprehenderit quisquam sed dolor tempore aut exercitationem
-              officia et nulla enim et quod ullam sed molestias voluptas eum
-              magni accusamus. Sit dolor provident sed quis consequatur et
-              maxime sint qui nisi corporis qui eaque placeat sit quia adipisci
-              ut minima dolore? Qui consequuntur consequuntur est totam corrupti
-              est debitis ipsa id officia mollitia et magni modi et explicabo
-              possimus. Eum praesentium repudiandae et laudantium suscipit nam
-              molestiae omnis quo unde accusantium ut autem corporis et tempore
-              provident. Sit temporibus tempore quo possimus reiciendis sed quam
-              fugit eum labore velit!
-            </info>
+            <div className="description">
+              {contactInfo ? contactInfo.description : "DESCRIPTION"}
+
+            </div>
           </S.description>
         </S.LeftSide>
         <S.RightSide>
           <S.UserInfo>
-            <img src={user} id="user" alt="image of user" />
+            <img src={!contactInfo ? user : contactInfo.presentationPhoto != null ? contactInfo.presentationPhoto : user} id="user" alt="image of user" />
 
-            <infoImage>
-              <name> Nome do Usuário </name>
-              <ocupation> Ocupação </ocupation>
-            </infoImage>
+            <div className='provider'>
+              <div className="name"> {provider.name} </div>
+              <div className="occupation"> {occupation} </div>
+            </div>
           </S.UserInfo>
-
-          {/* <S.hireButton> */}
-          {/* <img src={hireImage} id='hireButton' alt='image of the hire button'></img> */}
-          {/* <p> Marque um horário </p> */}
-          {/* </S.hireButton> */}
 
           <button id="button" title={" Marque um horário"}>
             <img
@@ -80,4 +94,4 @@ function collaboratorContactPage() {
   );
 }
 
-export default collaboratorContactPage;
+export default CollaboratorContactPage;

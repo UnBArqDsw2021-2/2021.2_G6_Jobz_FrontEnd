@@ -35,13 +35,14 @@ export const description = styled.div`
   font-family: Montserrat;
 
   h3 {
+    margin-left: 20px;
     margin-bottom: 40px;
     text-color: #23a6f0;
   }
 
-  info {
-    width: 50%;
-    margin-left: 50px;
+  .description {
+    width: 90%;
+    margin-left: 20px;
   }
 `;
 
@@ -82,21 +83,24 @@ export const UserInfo = styled.div`
   height: 370px;
 
   img {
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
     height: 300px;
     width: 300px;
+    border-radius: 100%;
   }
 
-  infoImage {
-    name {
+  .provider {
+    .name {
       display: flex;
       justify-content: center;
       margin-bottom: 10px;
     }
 
-    ocupation {
+    .occupation {
       display: flex;
       justify-content: center;
     }

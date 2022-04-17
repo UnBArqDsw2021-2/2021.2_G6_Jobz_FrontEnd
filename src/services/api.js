@@ -14,5 +14,7 @@ export const userRegistration = async (name, email, cpf, phone, password) => {
 
 export const collaboratorRegistration = async (name,
     email, cpf, phone, password, occupation) => {
-    return api.post("/provider/", { name, email, cpf, phone, password, occupation});
+    return api.post("/provider/", { name, email, cpf, phone, password, occupation });
 }
+
+export default api;
