@@ -1,5 +1,6 @@
 import UserRegistrationPage from '../views/userRegistrationPage/index'
 import CollaboratorRegistrationPage from '../views/collaboratorRegistrationPage/index'
+import CollaboratorContactPage from '../views/contatoPrestador'
 import HomePage from '../views/HomePage/index'
 import LoginPage from '../views/loginPage/index'
 import ExplorePage from '../views/explore/explorePage/index'
@@ -8,7 +9,6 @@ import ExplorePagePedreiro from '../views/explore/explorePagePedreiro/index'
 import ExplorePageTI from '../views/explore/explorePageTI/index'
 import ExplorePageEncanador from '../views/explore/explorePageEncanador/index'
 import ExplorePageJardineiro from '../views/explore/explorePageJardineiro/index'
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from "../context/auth"
 import React from 'react'
@@ -29,6 +29,8 @@ function Directions() {
           <Route path="/exploreGardener" element={<ExplorePageJardineiro />} /> 
           <Route path="/exploreDayLabore" element={<ExplorePageDiarista />} />
           <Route path="/exploreBricklayer" element={<ExplorePagePedreiro />} />
+          <Route path="/collaboratorContactPage" element={<CollaboratorContactPage />} />
+
         </Routes>
       </AuthProvider>
     </BrowserRouter>

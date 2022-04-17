@@ -75,6 +75,7 @@ function HomePage() {
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
 
+
         {!localStorage.getItem("loggedUser") ? (
           <Button
             path="/userRegistrationPage"
