@@ -21,8 +21,6 @@ function UserRegistrationPage() {
   async function onSubmitForm() {
     setLoading(true);
 
-    console.log('currentUser', currentUser);
-    
     if (form.cpf === currentUser.cpf) {
       alert('O CPF escolhido já está sendo utilizado!');
       return;
@@ -46,20 +44,15 @@ function UserRegistrationPage() {
     try {
       const response = await updateUser(form);
 
-      console.log('response', response);
-
       alert('Usuário atualizado com sucesso!');
 
       localStorage.setItem('userCpf', form.cpf);
     } catch (err) {
-      console.log(err);
       alert('Ops... Ocorreu um erro ao atualizar os dados!');
     }
   }
 
   function onFormChange(e) {
-    console.log(e.target.id);
-    console.log(e.target.value);
     const newdata = { ...form }
     newdata[e.target.id] = e.target.value
     setForm(newdata)
@@ -87,9 +80,7 @@ function UserRegistrationPage() {
           cpf: data[0].cpf,
           phone: data[0].phone,
         });
-        console.log('currentUser', currentUser);
       } catch (err) {
-        console.log(err);
         alert('Ops... Ocorreu um erro ao carregar os dados!');
       }
 
