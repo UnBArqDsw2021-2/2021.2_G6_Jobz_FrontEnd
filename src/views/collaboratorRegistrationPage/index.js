@@ -21,6 +21,7 @@ import { collaboratorRegistration } from "../../services/api";
 function CollaboratorRegistrationPage() {
   let navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
+  let submitState = true;
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -35,25 +36,28 @@ function CollaboratorRegistrationPage() {
     // console.log("back", data)
     e.preventDefault();
     setFormErrors(validate(data));
-    collaboratorRegistration(
-      data.name,
-      data.email,
-      data.cpf,
-      data.phone,
-      data.password,
-      data.occupation
-    );
 
-    console.log("formErrors tamanho", formErrors.length);
-    if (formErrors.length == 0) {
+    console.log("formErrors", formErrors);
+    if (submitState) {
+      collaboratorRegistration(
+        data.name,
+        data.email,
+        data.cpf,
+        data.phone,
+        data.password,
+        data.occupation
+      );
       navigate("/login");
+    } else {
+      // alert("erro colab register");
+      console.log("erro registro");
     }
   }
 
   const validate = (values) => {
     const errors = {};
     const regexEmail =
-      /^[a-zA-Z0-9]{3,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+      /^[a-zA-Z0-9]{6,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
     const regexCpf = /^\d{11}$/;
     const regexPhone = /^\d{11}$/;
     const regexPassword = /^[a-zA-Z0-9+\-*\^´\+_)(*\&!@#]{8,30}$/;
@@ -62,42 +66,55 @@ function CollaboratorRegistrationPage() {
     // console.log("password", confirmPassword);
     if (!values.name) {
       errors.name = "Campo nome obrigatório";
+      submitState = false;
     } else if (values.name.length < 3) {
+      submitState = false;
       errors.name = "Nome deve ter no mínimo 3 caracteres";
     }
 
     if (!values.email) {
+      submitState = false;
       errors.email = "Campo email obrigatório";
     } else if (!regexEmail.test(values.email)) {
-      errors.email = "Email inválido";
+      submitState = false;
+      errors.email = "Email no formato inválido (minimo 6 caracteres)";
     }
 
     if (!values.cpf) {
+      submitState = false;
       errors.cpf = "Campo cpf obrigatório";
     } else if (!regexCpf.test(values.cpf)) {
+      submitState = false;
       errors.cpf = "CPF inválido";
     }
 
     if (!values.phone) {
+      submitState = false;
       errors.phone = "Campo telefone obrigatório";
-    } else if (!regexPhone.test(values.phone)) {
+    } else if (!regexPhone.test(values.phone) && values.phone >= 11000000000) {
+      submitState = false;
       errors.phone = "Telefone inválido";
     }
 
     if (!values.occupation) {
+      submitState = false;
       errors.occupation = "Campo cargo obrigatório";
     }
 
     if (!values.password) {
+      submitState = false;
       errors.password = "Campo senha obrigatório";
-    } else if (regexPassword.test(values.password)) {
+    } else if (!regexPassword.test(values.password)) {
+      submitState = false;
       errors.password = "Senha inválida (8 a 30 caracteres)";
     }
 
     if (!confirmPassword) {
       // console.log("entrou", values.confirmPassword);
+      submitState = false;
       errors.confirmPassword = "Campo confirmar senha obrigatório";
     } else if (confirmPassword !== values.password) {
+      submitState = false;
       errors.confirmPassword = "Senhas não conferem";
     }
 
