@@ -20,8 +20,14 @@ export const AuthProvider = ({ children }) => {
   }, []); // função que quero executar quando inicializar e o array de monitoramento
 
   const login = async (email, password) => {
-    const response = await createSession(email, password);
-    console.log("login auth", response.status);
+    let response = null;
+    try {
+      response = await createSession(email, password);
+    } catch (err) {
+      console.log(err);
+      // console.log("login auth", response.status);
+      alert("Credenciais inválidas");
+    }
 
     // console.log("login auth status", response.status);
 
