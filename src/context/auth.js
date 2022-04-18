@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
+import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom'
 import { api, createSession } from '../services/api'
 
@@ -46,11 +47,12 @@ export const AuthProvider = ({ children }) => {
         //guarda em localStorage
        //localStorage.setItem("user", JSON.stringify(loggedUser)); // nao tem user
         //localStorage.setItem('token',token); // nao tem token
+        const decodedJWTUser = await jwt_decode(access);
+
         localStorage.setItem('refresh', refresh);
         localStorage.setItem('access', access);
-        localStorage.setItem('loggedUser', loggedUser)
-
-
+        localStorage.setItem('userCpf', decodedJWTUser.user_cpf);
+        
         //oferece ao Bearer o token
         api.defaults.headers.Authorization = `Bearer ${access}`;
 
