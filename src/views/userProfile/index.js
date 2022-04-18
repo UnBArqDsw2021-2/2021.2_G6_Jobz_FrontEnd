@@ -5,7 +5,7 @@ import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { Axios } from 'axios'
+import { getUsers } from '../../services/api';
 
 function UserRegistrationPage() {
   const [form, setForm] = useState({
@@ -27,7 +27,24 @@ function UserRegistrationPage() {
   }
 
   useEffect(() => {
-    // TODO: Pegar informações do back pela rota que pega os dados do usuário que está autenticado
+    async function loadData() {
+      const cpf = localStorage.getItem('userCpf');
+      
+      try {
+        const { data } = await getUsers({ cpf });
+
+        setForm({
+          name: data[0].name,
+          email: data[0].email,
+          cpf: data[0].cpf,
+          phone: data[0].phone,
+        });
+      } catch (err) {
+        console.log(err);
+        alert('Ops... Ocorreu um erro ao carregar os dados!');
+      }
+    }
+    loadData();
   });
 
   return (

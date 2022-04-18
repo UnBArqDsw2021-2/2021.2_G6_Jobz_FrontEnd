@@ -16,3 +16,8 @@ export const collaboratorRegistration = async (name,
     email, cpf, phone, password, occupation) => {
     return api.post("/provider/", { name, email, cpf, phone, password, occupation});
 }
+
+export const getUsers = async (filters) => {
+    console.log('filters', filters);
+    return api.get("/user/", filters);
+}

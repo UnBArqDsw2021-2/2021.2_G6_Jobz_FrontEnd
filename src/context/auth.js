@@ -51,8 +51,9 @@ export const AuthProvider = ({ children }) => {
 
         localStorage.setItem('refresh', refresh);
         localStorage.setItem('access', access);
+        localStorage.setItem('loggedUser', loggedUser)
         localStorage.setItem('userCpf', decodedJWTUser.user_cpf);
-        
+
         //oferece ao Bearer o token
         api.defaults.headers.Authorization = `Bearer ${access}`;
 
