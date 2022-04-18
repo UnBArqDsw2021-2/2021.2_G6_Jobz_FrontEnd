@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const RegistrationButton = styled.a`
   font-family: Montserrat;
   margin-top: 20px;
   font-size: 15px;
-`
+`;
 export const Body = styled.div`
   height: 400px;
   flex-direction: column;
@@ -25,9 +25,9 @@ export const Body = styled.div`
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15), -4px -4px 4px #ffffff;
     border-radius: 10px;
-    p{
+    p {
       font-family: Montserrat;
-      font-size:16px;
+      font-size: 16px;
     }
   }
 
@@ -47,8 +47,41 @@ export const Body = styled.div`
   form {
     padding: 0 1rem;
     background-color: #f9f9f9;
-    justifycontent: 'space-between';
+    justifycontent: "space-between";
     margin-top: -43px;
+
+    .email {
+      display: flex;
+
+      #iconEmail {
+        margin-top: 10px;
+        margin-left: 10px;
+        position: absolute;
+      }
+
+      #errorEmail {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
+    }
+
+    .password {
+      display: flex;
+      margin-top: 15px;
+      #iconPassword {
+        margin-top: 10px;
+        margin-left: 10px;
+        position: absolute;
+      }
+      #errorPassword {
+        margin-top: 40px;
+        font-size: 12px;
+        color: red;
+        position: absolute;
+      }
+    }
   }
 
   a {
@@ -56,4 +89,4 @@ export const Body = styled.div`
     padding-left: 34px;
     color: #e38233;
   }
-`
+`;
