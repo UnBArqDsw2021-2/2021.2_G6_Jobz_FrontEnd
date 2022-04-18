@@ -20,11 +20,16 @@ function LoginPage() {
   function submit(e) {
     e.preventDefault(); //não faça a ação padrão de atualizar a pagina
     setFormErrors(validate(data));
-    console.log("formErrors", formErrors);
+    console.log("formErrors login", formErrors);
     // const back = data;
     // console.log("back", data);
-    const response = login(data.email, data.password); // integracao com contexto e api
-    console.log("response login", response);
+    console.log(formErrors.length);
+    if (Object.keys(formErrors).length === 0) {
+      login(data.email, data.password); // integracao com contexto e api
+    } else {
+      console.log("erro login");
+      alert("erro login");
+    }
   }
 
   const validate = (values) => {
