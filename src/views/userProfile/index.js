@@ -9,45 +9,26 @@ import { getUsers, updateUser } from '../../services/api';
 
 function UserRegistrationPage() {
   const [loading, setLoading] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
   const [form, setForm] = useState({
     name: null,
-    cpf: null,
-    email: null,
     phone: null,
-    password: null,
   });
 
   async function onSubmitForm() {
     setLoading(true);
 
-    if (form.cpf === currentUser.cpf) {
-      alert('O CPF escolhido já está sendo utilizado!');
-      return;
-    }
-
-    if (form.cpf.length !== 11) {
-      alert('Escolha um CPF válido!');
-      return;
-    }
-
-    if (form.email === currentUser.email) {
-      alert('O e-mail escolhido já está sendo utilizado!');
-      return;
-    }
-
-    if (form.password === null || form.password.length < 8) {
-      alert('A nova senha deve ser maior que 8 caracteres!');
-      return;
-    }
+    // if (form.password === null || (form.password && form.password.length < 8)) {
+    //   alert('A nova senha deve ser maior que 8 caracteres!');
+    //   return;
+    // }
 
     try {
-      const response = await updateUser(form);
+      const userCpf = localStorage.getItem('userCpf');
+      const response = await updateUser(userCpf, form);
 
       alert('Usuário atualizado com sucesso!');
-
-      localStorage.setItem('userCpf', form.cpf);
     } catch (err) {
+      console.log(err);
       alert('Ops... Ocorreu um erro ao atualizar os dados!');
     }
   }
@@ -60,7 +41,7 @@ function UserRegistrationPage() {
 
   useEffect(() => {
     async function loadData() {
-      setLoading(true);
+      setLoading(true); 
 
       const cpf = localStorage.getItem('userCpf');
       
@@ -69,15 +50,6 @@ function UserRegistrationPage() {
 
         setForm({
           name: data[0].name,
-          email: data[0].email,
-          cpf: data[0].cpf,
-          phone: data[0].phone,
-        });
-
-        setCurrentUser({
-          name: data[0].name,
-          email: data[0].email,
-          cpf: data[0].cpf,
           phone: data[0].phone,
         });
       } catch (err) {
@@ -128,7 +100,7 @@ function UserRegistrationPage() {
             type="text"
             color="red"
           />
-          Cpf:
+          {/* Cpf:
           <Input
             onChange={e => onFormChange(e)}
             id="cpf"
@@ -145,7 +117,7 @@ function UserRegistrationPage() {
             placeholder="Digite o email aqui..."
             type="text"
             color="red"
-          />
+          /> */}
           Telefone:
           <Input
             onChange={e => onFormChange(e)}
@@ -155,7 +127,7 @@ function UserRegistrationPage() {
             type="text"
             color="red"
           />
-          Nova senha:
+          {/* Nova senha:
           <Input
             onChange={e => onFormChange(e)}
             id="password"
@@ -163,7 +135,7 @@ function UserRegistrationPage() {
             placeholder="Digite a nova senha aqui..."
             type="password"
             color="red"
-          />
+          /> */}
           <br></br>
           <Button onClick={() => onSubmitForm()} title="Enviar" />
         </S.rightSide>

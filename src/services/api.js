@@ -12,8 +12,8 @@ export const userRegistration = async (name, email, cpf, phone, password) => {
     return api.post("/user/", { name, email, cpf, phone, password });
 }
 
-export const updateUser = async (body) => {
-    return api.post("/user/", body);
+export const updateUser = async (userCpf, body) => {
+    return api.patch('/user/' +userCpf+'/', body );
 }
 
 export const collaboratorRegistration = async (name,
