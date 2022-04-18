@@ -34,23 +34,25 @@ function UserRegistrationPage() {
 
     console.log("formErrors", formErrors);
 
-    userRegistration(
-      data.name,
-      data.email,
-      data.cpf,
-      data.phone,
-      data.password
-    );
-
     if (submitState) {
+      userRegistration(
+        data.name,
+        data.email,
+        data.cpf,
+        data.phone,
+        data.password
+      );
       navigate("/login");
+    } else {
+      console.log("erro registro");
+      // alert("erro registro");
     }
   }
 
   const validate = (values) => {
     const errors = {};
     const regexEmail =
-      /^[a-zA-Z0-9]{3,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+      /^[a-zA-Z0-9]{6,30}\@[a-z]{2,7}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
     const regexCpf = /^\d{11}$/;
     const regexPhone = /^\d{11}$/;
     const regexPassword = /^[a-zA-Z0-9+\-*\^´\+_)(*\&!@#]{8,30}$/;
@@ -68,7 +70,7 @@ function UserRegistrationPage() {
       submitState = false;
     } else if (!regexEmail.test(values.email)) {
       submitState = false;
-      errors.email = "Email inválido";
+      errors.email = "Email no formato inválido (minimo 6 caracteres)";
     }
 
     if (!values.cpf) {
@@ -82,7 +84,7 @@ function UserRegistrationPage() {
     if (!values.phone) {
       submitState = false;
       errors.phone = "Campo telefone obrigatório";
-    } else if (!regexPhone.test(values.phone)) {
+    } else if (!regexPhone.test(values.phone) && values.phone >= 11000000000) {
       submitState = false;
       errors.phone = "Telefone inválido";
     }
