@@ -28,8 +28,18 @@ function UserRegistrationPage() {
       return;
     }
 
+    if (form.cpf.length !== 11) {
+      alert('Escolha um CPF válido!');
+      return;
+    }
+
     if (form.email === currentUser.email) {
       alert('O e-mail escolhido já está sendo utilizado!');
+      return;
+    }
+
+    if (form.password === null || form.password.length < 8) {
+      alert('A nova senha deve ser maior que 8 caracteres!');
       return;
     }
 
@@ -39,6 +49,8 @@ function UserRegistrationPage() {
       console.log('response', response);
 
       alert('Usuário atualizado com sucesso!');
+
+      localStorage.setItem('userCpf', form.cpf);
     } catch (err) {
       console.log(err);
       alert('Ops... Ocorreu um erro ao atualizar os dados!');
