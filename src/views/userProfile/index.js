@@ -15,18 +15,26 @@ function UserRegistrationPage() {
     cpf: null,
     email: null,
     phone: null,
+    password: null,
   });
 
   async function onSubmitForm() {
     setLoading(true);
+
+    console.log('currentUser', currentUser);
     
+    if (form.cpf === currentUser.cpf) {
+      alert('O CPF escolhido já está sendo utilizado!');
+      return;
+    }
+
+    if (form.email === currentUser.email) {
+      alert('O e-mail escolhido já está sendo utilizado!');
+      return;
+    }
+
     try {
-      const response = await updateUser({
-        ...(form.name !== currentUser.name && { name: form.name }),
-        ...(form.cpf !== currentUser.cpf && { cpf: form.cpf }),
-        ...(form.email !== currentUser.email && { email: form.email }),
-        ...(form.phone !== currentUser.phone && { phone: form.phone }),
-      });
+      const response = await updateUser(form);
 
       console.log('response', response);
 
@@ -61,7 +69,13 @@ function UserRegistrationPage() {
           phone: data[0].phone,
         });
 
-        setCurrentUser(form);
+        setCurrentUser({
+          name: data[0].name,
+          email: data[0].email,
+          cpf: data[0].cpf,
+          phone: data[0].phone,
+        });
+        console.log('currentUser', currentUser);
       } catch (err) {
         console.log(err);
         alert('Ops... Ocorreu um erro ao carregar os dados!');
@@ -128,7 +142,6 @@ function UserRegistrationPage() {
             placeholder="Digite o email aqui..."
             type="text"
             color="red"
-            disabled
           />
           Telefone:
           <Input
@@ -137,6 +150,15 @@ function UserRegistrationPage() {
             value={form.phone}
             placeholder="Digite o telefone aqui..."
             type="text"
+            color="red"
+          />
+          Nova senha:
+          <Input
+            onChange={e => onFormChange(e)}
+            id="password"
+            value={form.password}
+            placeholder="Digite a nova senha aqui..."
+            type="password"
             color="red"
           />
           <br></br>
