@@ -1,7 +1,6 @@
-import React, { useState, useEffect, createContext } from 'react';
-import jwt_decode from "jwt-decode";
-import { useNavigate } from 'react-router-dom'
-import { api, createSession } from '../services/api'
+import React, { useState, useEffect, createContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { api, createSession } from "../services/api";
 
 export const AuthContext = createContext();
 
@@ -13,41 +12,8 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const recoveredUser = localStorage.getItem("user");
 
-
-        const refresh = response.data.refresh;
-        const access = response.data.access;
-
-        console.log("loggedUser:" + loggedUser);
-        console.log("refresh:" + refresh);
-        console.log("access:" + access);
-
-        //guarda em localStorage
-        const decodedJWTUser = await jwt_decode(access);
-
-        localStorage.setItem('refresh', refresh);
-        localStorage.setItem('access', access);
-        localStorage.setItem('loggedUser', loggedUser)
-        localStorage.setItem('userCpf', decodedJWTUser.user_cpf);
-
-        //oferece ao Bearer o token
-        api.defaults.headers.Authorization = `Bearer ${access}`;
-
-        navigate('/');
-    };
-
-    const logout = () => {
-        console.log("logout!");
-
-        localStorage.removeItem("refresh");
-        localStorage.removeItem("access");
-        localStorage.removeItem("loggedUser");
-        api.defaults.headers.Authorization = null;
-
-        navigate('/login');
-
     if (recoveredUser) {
       setUser(JSON.parse(recoveredUser));
-
     }
 
     setLoading(false);
