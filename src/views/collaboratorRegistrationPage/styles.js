@@ -53,6 +53,12 @@ export const Body = styled.div`
         margin-left: 10px;
       }
 
+  #occupation{
+    font-family: Montserrat;
+    font-size:14px;
+    text-indent: 25px;
+  }
+
       #errorName {
         margin-top: 40px;
         font-size: 12px;

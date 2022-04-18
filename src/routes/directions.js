@@ -3,6 +3,9 @@ import CollaboratorRegistrationPage from '../views/collaboratorRegistrationPage/
 import CollaboratorContactPage from '../views/contatoPrestador'
 import HomePage from '../views/HomePage/index'
 import LoginPage from '../views/loginPage/index'
+import UserProfile from '../views/userProfile/index'
+import Security from '../views/security/index'
+import MyServicesPage from '../views/myServicesPage/index';
 import ExplorePage from '../views/explore/explorePage/index'
 import ExplorePageDiarista from '../views/explore/explorePageDiarista/index'
 import ExplorePagePedreiro from '../views/explore/explorePagePedreiro/index'
@@ -19,8 +22,13 @@ function Directions() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/myServices" element={<MyServicesPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/userRegistrationPage" element={<UserRegistrationPage />} />
+          <Route path="/collaboratorRegistrationPage" element={<CollaboratorRegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/collaboratorRegistrationPage" element={<CollaboratorRegistrationPage />} />          
           <Route path="/login" element={<LoginPage />} />   
           <Route path="/explore" element={<ExplorePage />} /> 
@@ -30,7 +38,6 @@ function Directions() {
           <Route path="/exploreDayLabore" element={<ExplorePageDiarista />} />
           <Route path="/exploreBricklayer" element={<ExplorePagePedreiro />} />
           <Route path="/collaboratorContactPage" element={<CollaboratorContactPage />} />
-
         </Routes>
       </AuthProvider>
     </BrowserRouter>

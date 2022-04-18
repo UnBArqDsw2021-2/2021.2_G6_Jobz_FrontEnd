@@ -16,8 +16,8 @@ function HomePage() {
 
   return (
     <S.Container>
-      <Navbar />
 
+      <Navbar />
       <section
         className="section"
         id="search"

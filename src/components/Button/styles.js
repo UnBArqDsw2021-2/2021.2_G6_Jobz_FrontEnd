@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   .button {
+
     background-color: ${props => (props.ButtonColor ? props.ButtonColor : 'white')};
     width: ${props => (props.buttonWidth ? props.buttonWidth : '235px')};
     height: ${props => (props.buttonHeight ? props.buttonHeight : '34px')};
