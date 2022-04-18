@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     let response = null;
+    
     try {
       response = await createSession(email, password);
     } catch (err) {
@@ -28,13 +29,7 @@ export const AuthProvider = ({ children }) => {
       // console.log("login auth", response.status);
       alert("Credenciais inválidas");
     }
-
-    // console.log("login auth status", response.status);
-
-    //console.log("email:"+email+" password:"+password); // printa email e senha
-
-    //parece não ter token
-    // não esta passando um user
+    
     const loggedUser = email; // recebemos email do usuario
 
     //const token = response.data.token; // recebemos o token
@@ -47,8 +42,6 @@ export const AuthProvider = ({ children }) => {
     console.log("access:" + access);
 
     //guarda em localStorage
-    //localStorage.setItem("user", JSON.stringify(loggedUser)); // nao tem user
-    //localStorage.setItem('token',token); // nao tem token
     localStorage.setItem("refresh", refresh);
     localStorage.setItem("access", access);
     localStorage.setItem("loggedUser", loggedUser);
@@ -61,7 +54,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    console.log("logout!");
+    //console.log("logout!");
     //localStorage.removeItem("user"); // nao tem user
     //localStorage.removeItem("token");
     localStorage.removeItem("refresh");

@@ -29,3 +29,6 @@ export const collaboratorRegistration = async (
     occupation,
   });
 };
+
+//export aqui
+export default api;

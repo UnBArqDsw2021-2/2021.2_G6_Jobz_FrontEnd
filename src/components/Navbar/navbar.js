@@ -45,7 +45,7 @@ function Navbar(props) {
       </S.BuscaHeader>
 
       <S.ButtonsContainer>
-        <a href="/">Explore</a>
+        <a href="/explore">Explore</a>
 
         {!auth ? (
           <a href="/collaboratorRegistrationPage">Preste Serviços</a>
