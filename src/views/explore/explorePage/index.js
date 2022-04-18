@@ -169,7 +169,7 @@ function ExplorePage() {
             <div id="link">
               <a href="/">Home</a>
               <img src={sinal} alt="sinal maior"></img>
-              <p id="service">Serviços de TI</p>
+              <p id="service"> Geral </p>
             </div>
             <p id="title">Serviços em geral</p>
             <p id="description">Aqui você encontra todos os serviços cadastrados por nossos prestadores.</p>
