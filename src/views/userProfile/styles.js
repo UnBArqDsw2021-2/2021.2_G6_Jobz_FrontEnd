@@ -8,8 +8,7 @@ export const Container = styled.div`
 export const body = styled.div`
   display: flex;
   margin-top: 8%;
-  height: 50rem;
-  margin-bottom: 50rem;
+  margin-bottom: 10rem;
   width: 100%;
 `
 export const navigationBar = styled.div`
@@ -24,7 +23,6 @@ export const rightSide = styled.div`
   font-style: normal;
   font-weight: 600;
   color: #black;
-  margin-left:-13%;
 
 h1{
       caret-color: transparent;
@@ -33,7 +31,7 @@ h1{
   text-align: left;
 }
 
-comando{
+#comando{
       caret-color: transparent;
 
   margin-top:5%;
@@ -42,7 +40,7 @@ comando{
   text-align: left;
 }
 
-addfile{
+#addfile{
     margin-top:20px;
     input{
     margin-top: 14px;
@@ -54,6 +52,29 @@ name{
     margin-top: 14px;
     
   }
+}
+
+#Name{
+    margin-top: 10px;
+    display: flex;
+    p {
+      margin-top: 25px;
+    }
+    input {
+      margin-left: 8rem;
+      margin-top: 14px;
+    }
+  }
+
+#Telephone{
+    display: flex;
+    p {
+      margin-top: 25px;
+    }
+    input {
+      margin-left: 7rem;
+      margin-top: 14px;
+    }
 }
 
 description{

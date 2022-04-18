@@ -8,8 +8,7 @@ export const Container = styled.div`
 export const body = styled.div`
   display: flex;
   margin-top: 8%;
-  height: 50rem;
-  margin-bottom: 50rem;
+  margin-bottom: 10rem;
   width: 100%;
 `
 export const navigationBar = styled.div`
@@ -25,7 +24,6 @@ export const rightSide = styled.div`
   font-style: normal;
   font-weight: 600;
   color: #black;
-  margin-left: -13%;
 
   h1 {
     caret-color: transparent;
@@ -34,7 +32,7 @@ export const rightSide = styled.div`
     text-align: left;
   }
 
-  comando {
+  .comando {
     caret-color: transparent;
     margin-top: 5%;
     width: 30rem;
@@ -42,7 +40,7 @@ export const rightSide = styled.div`
     text-align: left;
   }
 
-  email {
+  #email {
     display: flex;
     p {
       margin-top: 40px;
@@ -53,7 +51,7 @@ export const rightSide = styled.div`
     }
   }
 
-  password {
+  #password {
     margin-top: 20px;
     display: flex;
     p {
@@ -65,7 +63,7 @@ export const rightSide = styled.div`
     }
   }
 
-  confirmpassword {
+  #confirmpassword {
     display: flex;
     margin-top: 20px;
 
@@ -74,7 +72,7 @@ export const rightSide = styled.div`
     }
     input {
       margin-left: 3rem;
-      margin-top: 14px;
+      margin-top: 8px;
     }
   }
 `

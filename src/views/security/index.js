@@ -7,13 +7,13 @@ import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
 import { Axios } from 'axios'
 
-function UserRegistrationPage() {
+function SecurityPage() {
   return (
     <S.Container>
       <S.body>
         <Navbar home={true} explore={true} notification={true} />
         <S.navigationBar>
-          <sideBar>
+          <div id="sideBar">
             <Button
               path="/userProfile"
               title="Perfil"
@@ -50,27 +50,27 @@ function UserRegistrationPage() {
               borderColor="1px solid gray"
             />
 
-          </sideBar>
+          </div>
         </S.navigationBar>
 
         <S.rightSide>
           <h1> Login e Segurança </h1>
-          <comando> Gerencie suas informações de segurança abaixo </comando>
+          <div id="comando"> Gerencie suas informações de segurança abaixo </div>
           <hr />
 
-          <email>
+          <div id="email">
             <p>Email:</p>
             <Input type="email" placeholder="email@.com.br" />
-          </email>
-          <password>
+          </div>
+          <div id='password'>
             <p> Senha:</p>
             <Input type="password" placeholder="***********" />
-          </password>
+          </div>
 
-          <confirmpassword>
+          <div id="confirmpassword">
             <p>Confirmar senha:</p>
             <Input type="password" placeholder="***********" />
-          </confirmpassword>
+          </div>
           <br></br>
           <Button title="Enviar" />
         </S.rightSide>
@@ -81,4 +81,4 @@ function UserRegistrationPage() {
   )
 }
 
-export default UserRegistrationPage
+export default SecurityPage

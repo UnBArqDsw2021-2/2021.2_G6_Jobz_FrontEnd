@@ -55,7 +55,7 @@ function MyServicesPage() {
       <S.body>
         <Navbar home={true} explore={true} notification={true} />
         <S.navigationBar>
-          <sideBar>
+          <div id="sideBar">
             <Button
               path="/userProfile"
               title="Perfil"
@@ -91,12 +91,12 @@ function MyServicesPage() {
               borderColor="1px solid gray"
             />
 
-          </sideBar>
+          </div>
         </S.navigationBar>
 
         <S.rightSide>
           <h1> Meus serviços </h1>
-          <comando> Crie, visualize ou delete seus serviços disponíveis abaixo </comando>
+          <div id="comando"> Crie, visualize ou delete seus serviços disponíveis abaixo </div>
           <hr />
 
           <br></br>

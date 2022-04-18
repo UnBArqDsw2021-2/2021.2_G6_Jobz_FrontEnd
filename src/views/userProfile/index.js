@@ -41,10 +41,10 @@ function UserRegistrationPage() {
 
   useEffect(() => {
     async function loadData() {
-      setLoading(true); 
+      setLoading(true);
 
       const cpf = localStorage.getItem('userCpf');
-      
+
       try {
         const { data } = await getUsers({ cpf });
 
@@ -67,7 +67,7 @@ function UserRegistrationPage() {
       <S.body>
         <Navbar home={true} explore={true} notification={true} />
         <S.navigationBar>
-          <sideBar>
+          <div id="sideBar">
             <Button path="/" title="Perfil" ButtonColor="#39C0A8" textColor="white" borderColor="1px solid #33FFDA"
             />
             <Button path="/security" title="Login e Segurança" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
@@ -78,64 +78,41 @@ function UserRegistrationPage() {
             />
             <Button path="/" title="Notificações" ButtonColor="white" textColor="gray" borderColor="1px solid gray"
             />
-          </sideBar>
+          </div>
         </S.navigationBar>
 
         <S.rightSide>
           <h1> Perfil do usuário </h1>
-          <comando> Atualize suas informações abaixo </comando>
+          <div id="comando"> Atualize suas informações abaixo </div>
           <hr />
-          <addfile>
+          <div id="addfile">
             Adicione uma imagem de perfil
             <input type="file"></input>
-          </addfile>
-          <br></br>
-          <br></br>
-          Nome:
-          <Input
-            onChange={e => onFormChange(e)}
-            id="name"
-            value={form.name}
-            placeholder="Digite o nome aqui..."
-            type="text"
-            color="red"
-          />
-          {/* Cpf:
-          <Input
-            onChange={e => onFormChange(e)}
-            id="cpf"
-            value={form.cpf}
-            placeholder="Digite o cpf aqui..."
-            type="text"
-            color="red"
-          />
-          Email:
-          <Input
-            onChange={e => onFormChange(e)}
-            id="email"
-            value={form.email}
-            placeholder="Digite o email aqui..."
-            type="text"
-            color="red"
-          /> */}
-          Telefone:
-          <Input
-            onChange={e => onFormChange(e)}
-            id="phone"
-            value={form.phone}
-            placeholder="Digite o telefone aqui..."
-            type="text"
-            color="red"
-          />
-          {/* Nova senha:
-          <Input
-            onChange={e => onFormChange(e)}
-            id="password"
-            value={form.password}
-            placeholder="Digite a nova senha aqui..."
-            type="password"
-            color="red"
-          /> */}
+          </div>
+
+          <div id="Name">
+            <p>Nome:</p>
+            <Input
+              onChange={e => onFormChange(e)}
+              id="name"
+              value={form.name}
+              placeholder="Digite o nome aqui..."
+              type="text"
+              color="red"
+            />
+          </div>
+
+          <div id="Telephone">
+            <p>Telefone:</p>
+            <Input
+              onChange={e => onFormChange(e)}
+              id="phone"
+              value={form.phone}
+              placeholder="Digite o telefone aqui..."
+              type="text"
+              color="red"
+            />
+          </div>
           <br></br>
           <Button onClick={() => onSubmitForm()} title="Enviar" />
         </S.rightSide>
