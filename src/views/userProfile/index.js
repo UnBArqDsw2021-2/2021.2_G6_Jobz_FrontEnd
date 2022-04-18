@@ -5,10 +5,11 @@ import Input from '../../components/Input'
 import * as S from './styles'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
-import { getUsers } from '../../services/api';
+import { getUsers, updateUser } from '../../services/api';
 
 function UserRegistrationPage() {
   const [loading, setLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
   const [form, setForm] = useState({
     name: null,
     cpf: null,
@@ -20,17 +21,19 @@ function UserRegistrationPage() {
     setLoading(true);
     
     try {
-      const response = await updateUser({ cpf });
-
-      setForm({
-        name: data[0].name,
-        email: data[0].email,
-        cpf: data[0].cpf,
-        phone: data[0].phone,
+      const response = await updateUser({
+        ...(form.name !== currentUser.name && { name: form.name }),
+        ...(form.cpf !== currentUser.cpf && { cpf: form.cpf }),
+        ...(form.email !== currentUser.email && { email: form.email }),
+        ...(form.phone !== currentUser.phone && { phone: form.phone }),
       });
+
+      console.log('response', response);
+
+      alert('Usuário atualizado com sucesso!');
     } catch (err) {
       console.log(err);
-      alert('Ops... Ocorreu um erro ao carregar os dados!');
+      alert('Ops... Ocorreu um erro ao atualizar os dados!');
     }
   }
 
@@ -57,6 +60,8 @@ function UserRegistrationPage() {
           cpf: data[0].cpf,
           phone: data[0].phone,
         });
+
+        setCurrentUser(form);
       } catch (err) {
         console.log(err);
         alert('Ops... Ocorreu um erro ao carregar os dados!');
