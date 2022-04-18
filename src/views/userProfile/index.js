@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/footer'
 import { getUsers } from '../../services/api';
 
 function UserRegistrationPage() {
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: null,
     cpf: null,
@@ -15,12 +16,27 @@ function UserRegistrationPage() {
     phone: null,
   });
 
-  function onSubmitForm() {
-    console.log(form);
-    // TODO: Integrar com axios pra mandar as informações atualizadas desse usuário em uma rota de atualização autenticada 
+  async function onSubmitForm() {
+    setLoading(true);
+    
+    try {
+      const response = await updateUser({ cpf });
+
+      setForm({
+        name: data[0].name,
+        email: data[0].email,
+        cpf: data[0].cpf,
+        phone: data[0].phone,
+      });
+    } catch (err) {
+      console.log(err);
+      alert('Ops... Ocorreu um erro ao carregar os dados!');
+    }
   }
 
   function onFormChange(e) {
+    console.log(e.target.id);
+    console.log(e.target.value);
     const newdata = { ...form }
     newdata[e.target.id] = e.target.value
     setForm(newdata)
@@ -28,6 +44,8 @@ function UserRegistrationPage() {
 
   useEffect(() => {
     async function loadData() {
+      setLoading(true);
+
       const cpf = localStorage.getItem('userCpf');
       
       try {
@@ -43,8 +61,11 @@ function UserRegistrationPage() {
         console.log(err);
         alert('Ops... Ocorreu um erro ao carregar os dados!');
       }
+
+      setLoading(false);
     }
-    loadData();
+
+    if (!form.name) loadData();
   });
 
   return (

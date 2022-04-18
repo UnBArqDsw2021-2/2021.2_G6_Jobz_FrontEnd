@@ -18,6 +18,5 @@ export const collaboratorRegistration = async (name,
 }
 
 export const getUsers = async (filters) => {
-    console.log('filters', filters);
     return api.get("/user/", filters);
 }
