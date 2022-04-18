@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer/footer'
 import sinal from '../../../assets/sinal.svg'
 import Select from 'react-select';
 import serviceTI from '../../../assets/TiExample.png'
+import Jardineiro from '../../../assets/Jardineiro.png'
 import Diarista from '../../../assets/DiaristaExample.png'
 import Encanador from '../../../assets/EncadorExample.png'
 import Pedreiro from '../../../assets/Pedreiro.png'
@@ -28,10 +29,10 @@ function ExplorePage() {
   }, []);
 
 
-  const listItems = user?.map((number) =>
+  const listItems = user?.map((provider) =>
     <div >
-      <button id="1" onClick={navigateToPage} className="imagesButton"> 
-      <img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img>
+      <button id="1" onClick={() => navigateToPage(provider)} className="imagesButton">
+        <img src={image(user[i]?.occupation)} alt="Imagem da ocupacao"></img>
       </button>
       <p id="titleService"> Prestador: {user[i]?.name}</p>
       <p id="descriptionService">Serviço: {ocuppation(user[i++]?.occupation)}</p>
@@ -39,8 +40,9 @@ function ExplorePage() {
 
   );
 
-  function navigateToPage() {
-    navigate("/collaboratorContactPage")
+  function navigateToPage(provider) {
+    console.log(provider)
+    navigate("/collaboratorContactPage", { state: { name: provider.name, occupation: provider.occupation, cpf: provider.cpf } })
   }
 
 
@@ -100,7 +102,22 @@ function ExplorePage() {
         buttonHeight="100%"
         boxShadow="0px"
       />
+    },
+    {
+      value: 5,
+      label: <Button
+        path="/exploreGardener"
+        title="Jardineiro"
+        ButtonColor="transparent"
+        borderColor="white"
+        textColor="black"
+        borderRadius="0px"
+        buttonWidth="100%"
+        buttonHeight="100%"
+        boxShadow="0px"
+      />
     }
+
   ]
 
   function ocuppation(e) {
@@ -116,6 +133,9 @@ function ExplorePage() {
     else if (e === 4) {
       return "Tecnico"
     }
+    else if (e === 5) {
+      return "Jardineiro"
+    }
   }
 
   function image(e) {
@@ -130,6 +150,9 @@ function ExplorePage() {
     }
     else if (e === 4) {
       return serviceTI
+    }
+    else if (e === 5) {
+      return Jardineiro
     }
   }
 

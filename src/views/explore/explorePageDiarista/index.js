@@ -10,9 +10,12 @@ import Encanador from '../../../assets/EncadorExample.png'
 import Pedreiro from '../../../assets/Pedreiro.png'
 import Select from 'react-select';
 import { api } from '../../../services/api'
-
+import { useNavigate } from 'react-router-dom'
 
 function ExplorePageDiarista() {
+
+  let navigate = useNavigate()
+
   const content = [
     {
       value: 1,
@@ -114,11 +117,11 @@ function ExplorePageDiarista() {
   let i = 0;
   //console.log(user?.length)
   function listItems() {
-    return listItems = user?.map((number) => {
+    return listItems = user?.map((provider) => {
       if (user?.[i++].occupation === 1) {
         return (
           <div>
-            <button className="imagesButton"><img src={image(user[i - 1]?.occupation)} alt="Imagem da ocupacao"></img></button>
+            <button className="imagesButton" onClick={() => navigateToPage(provider)} ><img src={image(user[i - 1]?.occupation)} alt="Imagem da ocupacao"></img></button>
             <p id="titleService"> Prestador: {user[i - 1]?.name}</p>
             <p id="descriptionService">Serviço: {ocuppation(user[i - 1]?.occupation)}</p>
           </div>
@@ -126,6 +129,11 @@ function ExplorePageDiarista() {
       }
     }
     );
+  }
+
+  function navigateToPage(provider) {
+    console.log(provider)
+    navigate("/collaboratorContactPage", { state: { name: provider.name, occupation: provider.occupation, cpf: provider.cpf } })
   }
 
   return (
