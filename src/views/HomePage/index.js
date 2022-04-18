@@ -3,7 +3,7 @@ import * as S from './styles'
 import procura from '../../assets/procura.svg'
 import background from '../../assets/service.png'
 import ti from '../../assets/TI.png'
-import jardinagem from '../../assets/Jardinagem.png'
+import jardinagem from '../../assets/Jardineiro.png'
 import encanador from '../../assets/Encanador.png'
 import Navbar from '../../components/Navbar/navbar'
 import Footer from '../../components/Footer/footer'
@@ -49,19 +49,19 @@ function HomePage() {
           </div>
 
           <div className="box">
-            <img src={ti} id="ti" alt="imagem tecnico em ti" />
+            <a href="/exploreTI"><img src={ti} id="ti" alt="imagem tecnico em ti" /></a>
             <br></br>
             <span>Assistência em TI</span>
           </div>
 
           <div className="box">
-            <img src={encanador} id="encanador" alt="imagem encanador" />
+            <a href="/explorePlumber"><img src={encanador} id="encanador" alt="imagem encanador" /></a>
             <br></br>
             <span> Encanadores</span>
           </div>
 
           <div className="box">
-            <img src={jardinagem} id="jardinagem" alt="imagem jardineiro" />
+            <a href="/exploreGardener"><img src={jardinagem} id="jardinagem" alt="imagem jardineiro" /></a>
             <br></br>
             <span> Jardineiros</span>
           </div>
@@ -74,6 +74,7 @@ function HomePage() {
           <br />
           interação de prestadores de seriços com seus respectivos clientes.
         </p>
+
 
         {!localStorage.getItem("loggedUser") ? (
           <Button
