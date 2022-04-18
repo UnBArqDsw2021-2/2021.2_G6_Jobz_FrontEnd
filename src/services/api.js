@@ -13,14 +13,27 @@ export const userRegistration = async (name, email, cpf, phone, password) => {
 }
 
 export const updateUser = async (userCpf, body) => {
-    return api.patch('/user/' +userCpf+'/', body );
+    return api.patch('/user/' + userCpf + '/', body);
 }
 
 export const collaboratorRegistration = async (name,
     email, cpf, phone, password, occupation) => {
-    return api.post("/provider/", { name, email, cpf, phone, password, occupation});
+    return api.post("/provider/", { name, email, cpf, phone, password, occupation });
 }
 
 export const getUsers = async (filters) => {
     return api.get("/user/", filters);
 }
+
+export const postContactProvider = async (
+    presentationPhoto, description) => {
+    try {
+        return api.post("/providerPresentation/", { presentationPhoto, description });
+    }
+    catch (error) {
+        console.log(error)
+    }
+
+}
+
+export default api;
