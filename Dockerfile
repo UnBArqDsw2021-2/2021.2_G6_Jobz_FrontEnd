@@ -5,7 +5,7 @@ COPY package.json ./
 RUN npm install
 RUN npm install --legacy-peer-deps
 RUN npm install --force
-RUN npm install @emotion/react
+RUN npm i @emotion/react @emotion/styled
 COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
